@@ -48,6 +48,11 @@ namespace Cirrious.MvvmCross.WindowsCommon.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            if (e.NavigationMode == NavigationMode.New)
+            {
+                ViewModel = null;
+            }
+
             base.OnNavigatedTo(e);
 
             this.OnViewCreate(e.Parameter as MvxViewModelRequest, () => LoadStateBundle(e));
