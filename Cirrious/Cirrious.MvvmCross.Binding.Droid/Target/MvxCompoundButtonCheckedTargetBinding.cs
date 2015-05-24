@@ -43,7 +43,11 @@ namespace Cirrious.MvvmCross.Binding.Droid.Target
 
         private void CompoundButtonOnCheckedChange(object sender, CompoundButton.CheckedChangeEventArgs args)
         {
+#if !DOT42
             FireValueChanged(View.Checked);
+#else
+            FireValueChanged(View.IsChecked);
+#endif
         }
 
         protected override void Dispose(bool isDisposing)

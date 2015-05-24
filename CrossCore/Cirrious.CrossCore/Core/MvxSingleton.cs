@@ -7,7 +7,12 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using Cirrious.CrossCore.Exceptions;
+
+#if DOT42
+using Java.Util.Concurrent;
+#endif
 
 namespace Cirrious.CrossCore.Core
 {
@@ -51,6 +56,7 @@ namespace Cirrious.CrossCore.Core
         }
     }
 
+#if !DOT42
     public abstract class MvxSingleton<TInterface>
         : MvxSingleton
         where TInterface : class
@@ -73,4 +79,45 @@ namespace Cirrious.CrossCore.Core
             }
         }
     }
+#else
+    public abstract class MvxSingleton<TInterface>
+        : MvxSingleton
+        where TInterface : class
+    {
+        [SuppressMessage("dot42", "StaticFieldInGenericType")]
+        private static readonly ConcurrentHashMap<Type, object> _instances = new ConcurrentHashMap<Type, object>();
+
+        protected MvxSingleton()
+        {
+            if (Instance != null)
+                throw new MvxException("You cannot create more than one instance of MvxSingleton");
+
+            Instance = this as TInterface;
+        }
+
+        public static TInterface Instance 
+        {
+            get
+            {
+                return _instances.Get(typeof(TInterface)) as TInterface;
+            }       
+            
+            private set
+            {
+                if(value == null)
+                    _instances.Remove(typeof(TInterface));
+                else
+                    _instances.Put(typeof(TInterface), value);
+            }
+        }
+
+        protected override void Dispose(bool isDisposing)
+        {
+            if (isDisposing)
+            {
+                Instance = null;
+            }
+        }
+    }
+#endif
 }

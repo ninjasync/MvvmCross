@@ -80,7 +80,7 @@ namespace Cirrious.MvvmCross.ViewModels
         {
             _handlersLookup.Clear();
         }
-
+#if !DOT42
         public MvxPropertyChangedListener Listen<TProperty>(Expression<Func<TProperty>> property, Action handler)
         {
             return Listen(property, (s, e) => handler());
@@ -98,7 +98,7 @@ namespace Cirrious.MvvmCross.ViewModels
             var propertyName = _notificationObject.GetPropertyNameFromExpression(propertyExpression);
             return Listen(propertyName, handler);
         }
-
+#endif
         public MvxPropertyChangedListener Listen(string propertyName, Action handler)
         {
             return Listen(propertyName, (s, e) => handler());

@@ -10,6 +10,7 @@ using Android.Content;
 
 namespace Cirrious.CrossCore.Droid.Views
 {
+#if !DOT42
     public class MvxActivityResultParameters
     {
         public MvxActivityResultParameters(int requestCode, Result resultCode, Intent data)
@@ -23,4 +24,19 @@ namespace Cirrious.CrossCore.Droid.Views
         public Result ResultCode { get; private set; }
         public Intent Data { get; private set; }
     }
+#else
+    public class MvxActivityResultParameters
+    {
+        public MvxActivityResultParameters(int requestCode, int resultCode, Intent data)
+        {
+            Data = data;
+            ResultCode = resultCode;
+            RequestCode = requestCode;
+        }
+
+        public int RequestCode { get; private set; }
+        public int ResultCode { get; private set; }
+        public Intent Data { get; private set; }
+    }
+#endif
 }

@@ -49,6 +49,7 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
                 this._owner.NotifyDataSetInvalidated();
             }
 
+#if !DOT42
             public override ICharSequence ConvertResultToStringFormatted(Java.Lang.Object resultValue)
             {
                 var ourContainer = resultValue as MvxJavaContainer;
@@ -59,7 +60,18 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
 
                 return new Java.Lang.String(ourContainer.Object.ToString());
             }
+#else
+            public override ICharSequence ConvertResultToString(object resultValue)
+            {
+                var ourContainer = resultValue as MvxJavaContainer;
+                if (ourContainer == null)
+                {
+                    return base.ConvertResultToString(resultValue);
+                }
 
+                return ourContainer.Object.ToString();
+            }
+#endif
             #endregion
         }
 
@@ -116,16 +128,22 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
             Filter = new MyFilter(this);
         }
 
+#if !DOT42
 		protected MvxFilteringAdapter(IntPtr javaReference, JniHandleOwnership transfer)
 			: base(javaReference, transfer)
 	    {
 	    }
+#endif
 
         public bool ReturnSingleObjectFromGetItem { get; set; }
 
         private MvxReplaceableJavaContainer _javaContainer;
 
+#if !DOT42
         public override Java.Lang.Object GetItem(int position)
+#else
+        public override System.Object GetItem(int position)
+#endif
         {
             // for autocomplete views we need to return something other than null here
             // - see @JonPryor's answer in http://stackoverflow.com/questions/13842864/why-does-the-gref-go-too-high-when-i-put-a-mvxbindablespinner-in-a-mvxbindableli/13995199#comment19319057_13995199

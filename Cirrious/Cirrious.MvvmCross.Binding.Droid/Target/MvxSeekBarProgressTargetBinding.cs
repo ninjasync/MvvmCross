@@ -38,7 +38,11 @@ namespace Cirrious.MvvmCross.Binding.Droid.Target
             seekbar.Progress = (int) value;
         }
 
+#if !DOT42
         private void SeekBarProgressChanged(object sender, SeekBar.ProgressChangedEventArgs e)
+#else
+        private void SeekBarProgressChanged(object sender, ProgressChangedEventArgs e)
+#endif
         {
             if (e.FromUser)
                 FireValueChanged(e.Progress);

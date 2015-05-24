@@ -19,6 +19,7 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
         : FrameLayout
         , IMvxBindingContextOwner
         , ICheckable
+        , IDisposable
     {
         private readonly IMvxAndroidBindingContext _bindingContext;
 
@@ -27,11 +28,12 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
         {
             _bindingContext = new MvxAndroidBindingContext(context, layoutInflater, dataContext);
         }
-
+#if !DOT42
 		protected MvxBaseListItemView(IntPtr javaReference, JniHandleOwnership transfer)
 			: base(javaReference, transfer)
 	    {
 	    }
+#endif
 
         /*
         protected override ViewGroup.LayoutParams GenerateDefaultLayoutParams()
@@ -72,7 +74,7 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
             base.OnDetachedFromWindow();
             _isAttachedToWindow = false;
         }
-
+#if !DOT42
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -83,6 +85,13 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
 
             base.Dispose(disposing);
         }
+#else
+        public void Dispose()
+        {
+            this.ClearAllBindings();
+            _cachedDataContext = null;
+        }
+#endif
 
         protected View Content
         {
@@ -149,7 +158,11 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
                 var contentCheckable = ContentCheckable;
                 if (contentCheckable != null)
                 {
+#if !DOT42
                     return contentCheckable.Checked;
+#else
+                    return contentCheckable.IsChecked;
+#endif
                 }
 
                 return _checked;
@@ -161,7 +174,12 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
                 var contentCheckable = ContentCheckable;
                 if (contentCheckable != null)
                 {
+#if !DOT42
                     contentCheckable.Checked = value;
+#else
+                    contentCheckable.IsChecked = value;
+#endif
+                    
                     return;
                 }
 
@@ -170,7 +188,7 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
                 var firstChild = FirstChild;
                 if (firstChild == null)
                     return;
-
+#if !DOT42
                 if (Context.ApplicationInfo.TargetSdkVersion
                     >= Android.OS.BuildVersionCodes.Honeycomb &&
                     Android.OS.Build.VERSION.SdkInt
@@ -178,7 +196,22 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
                 {
                     firstChild.Activated = value;
                 }
+#else
+                if (Context.ApplicationInfo.TargetSdkVersion >= Android.OS.Build.VERSION_CODES.HONEYCOMB 
+                 && Android.OS.Build.VERSION.SDK_INT >= Android.OS.Build.VERSION_CODES.HONEYCOMB)
+                {
+                    firstChild.IsActivated = value;
+                }
+#endif
             }
         }
+
+#if DOT42 
+        public virtual bool IsChecked
+        {
+            get { return Checked; }
+            set { Checked = value; }
+        }
+#endif
     }
 }

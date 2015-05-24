@@ -4,7 +4,7 @@
 // Contributions and inspirations noted in readme.md and license.txt
 // 
 // Project Lead - Stuart Lodge, @slodge, me@slodge.com
-
+#if!DOT42
 using System;
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Platform;
@@ -45,3 +45,4 @@ namespace Cirrious.MvvmCross.Binding.BindingContext
         }
     }
 }
+#endif

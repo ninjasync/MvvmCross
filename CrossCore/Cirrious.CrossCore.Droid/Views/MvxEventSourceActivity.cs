@@ -16,6 +16,7 @@ namespace Cirrious.CrossCore.Droid.Views
     public abstract class MvxEventSourceActivity
         : Activity
           , IMvxEventSourceActivity
+          , IDisposable
     {
         protected override void OnCreate(Bundle bundle)
         {
@@ -71,12 +72,19 @@ namespace Cirrious.CrossCore.Droid.Views
             StartActivityForResultCalled.Raise(this, new MvxStartActivityForResultParameters(intent, requestCode));
             base.StartActivityForResult(intent, requestCode);
         }
-
+#if !DOT42
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             ActivityResultCalled.Raise(this, new MvxActivityResultParameters(requestCode, resultCode, data));
             base.OnActivityResult(requestCode, resultCode, data);
         }
+#else
+        protected override void OnActivityResult(int requestCode, int resultCode, Intent data)
+        {
+            ActivityResultCalled.Raise(this, new MvxActivityResultParameters(requestCode, resultCode, data));
+            base.OnActivityResult(requestCode, resultCode, data);
+        }
+#endif
 
         protected override void OnSaveInstanceState(Bundle outState)
         {
@@ -84,6 +92,7 @@ namespace Cirrious.CrossCore.Droid.Views
             base.OnSaveInstanceState(outState);
         }
 
+#if !DOT42
 		protected override void Dispose(bool disposing)
 		{
 			if (disposing)
@@ -92,6 +101,12 @@ namespace Cirrious.CrossCore.Droid.Views
 			}
 			base.Dispose(disposing);
 		}
+#else
+        public void Dispose()
+        {
+            DisposeCalled.Raise(this);
+        }
+#endif
 
         public event EventHandler DisposeCalled;
         public event EventHandler<MvxValueEventArgs<Bundle>> CreateWillBeCalled;

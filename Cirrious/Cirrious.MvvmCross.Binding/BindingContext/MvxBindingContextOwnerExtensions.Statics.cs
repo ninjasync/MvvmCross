@@ -17,11 +17,12 @@ namespace Cirrious.MvvmCross.Binding.BindingContext
         {
             get { return MvxBindingSingletonCache.Instance.LanguageParser; }
         }
-
+#if !DOT42
         public static IMvxPropertyExpressionParser PropertyExpressionParser
         {
             get { return MvxBindingSingletonCache.Instance.PropertyExpressionParser; }
         }
+#endif
 
         public static IMvxValueConverterLookup ValueConverterLookup
         {

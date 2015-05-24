@@ -37,11 +37,13 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
             adapter.ItemTemplateId = itemTemplateId;
             Adapter = adapter;
         }
-
-		protected MvxListView(IntPtr javaReference, JniHandleOwnership transfer)
+		
+#if !DOT42
+        protected MvxListView(IntPtr javaReference, JniHandleOwnership transfer)
 			: base(javaReference, transfer)
 	    {
 	    }
+#endif
 
         public new IMvxAdapter Adapter
         {

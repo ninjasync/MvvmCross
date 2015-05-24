@@ -26,8 +26,11 @@ namespace Cirrious.MvvmCross.Binding.Droid.Target
         {
             view.LongClick += ViewOnLongClick;
         }
-
+#if !DOT42
         private void ViewOnLongClick(object sender, View.LongClickEventArgs longClickEventArgs)
+#else 
+        private void ViewOnLongClick(object sender, LongClickEventArgs longClickEventArgs)
+#endif
         {
             if (_command == null)
                 return;

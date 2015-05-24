@@ -27,7 +27,7 @@ namespace Cirrious.MvvmCross.Binding.BindingContext
             target.BindingContextOwner.AddBindings(element, descriptionText);
             return element;
         }
-
+#if !DOT42
         public static T Bind<T, TViewModel>(this T element,
                                             MvxInlineBindingTarget<TViewModel> target,
                                             Expression<Func<TViewModel, object>> sourcePropertyPath,
@@ -78,6 +78,7 @@ namespace Cirrious.MvvmCross.Binding.BindingContext
             var targetPath = targetPropertyPath == null ? null : parser.Parse(targetPropertyPath).Print();
             return element.Bind(target, targetPath, sourcePath, converter, converterParameter, fallbackValue, mode);
         }
+#endif
 
         public static T Bind<T, TViewModel>(this T element,
                                             MvxInlineBindingTarget<TViewModel> target,

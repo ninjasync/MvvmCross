@@ -7,9 +7,14 @@
 
 using System;
 using System.Collections.Generic;
+using Cirrious.CrossCore;
 using Cirrious.CrossCore.Platform;
 using Cirrious.MvvmCross.Platform;
 using Cirrious.MvvmCross.Views;
+
+#if DOT42
+using Dot42;
+#endif
 
 namespace Cirrious.MvvmCross.ViewModels
 {
@@ -36,7 +41,7 @@ namespace Cirrious.MvvmCross.ViewModels
             return false;
         }
 
-        protected bool ShowViewModel<TViewModel>(object parameterValuesObject,
+        protected bool ShowViewModel<TViewModel>([SerializedParameter] object parameterValuesObject,
                                                  IMvxBundle presentationBundle = null,
                                                  MvxRequestedBy requestedBy = null)
             where TViewModel : IMvxViewModel
@@ -72,9 +77,8 @@ namespace Cirrious.MvvmCross.ViewModels
                 requestedBy);
         }
 
-
         protected bool ShowViewModel(Type viewModelType,
-                                     object parameterValuesObject,
+                                     [SerializedParameter] object parameterValuesObject,
                                      IMvxBundle presentationBundle = null,
                                      MvxRequestedBy requestedBy = null)
         {

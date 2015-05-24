@@ -20,7 +20,7 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
 {
     [Register("cirrious.mvvmcross.binding.droid.views.MvxImageView")]
     public class MvxImageView
-        : ImageView
+        : ImageView, IDisposable
     {
         private readonly IMvxImageHelper<Bitmap> _imageHelper;
 
@@ -67,10 +67,12 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
             }
         }
 
+#if !DOT42
 		protected MvxImageView(IntPtr javaReference, JniHandleOwnership transfer)
 			: base(javaReference, transfer)
 	    {
 	    }
+#endif
 
         public string ImageUrl
         {
@@ -106,6 +108,8 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
             get { return ImageUrl; }
             set { ImageUrl = value; }
         }
+
+#if !DOT42
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -116,6 +120,13 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
 
             base.Dispose(disposing);
         }
+#else
+        public void Dispose()
+        {
+            if (_imageHelper != null)
+                _imageHelper.Dispose();
+        }
+#endif
 
         private void ImageHelperOnImageChanged(object sender, MvxValueEventArgs<Bitmap> mvxValueEventArgs)
         {

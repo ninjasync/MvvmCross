@@ -189,7 +189,7 @@ namespace Cirrious.MvvmCross.Binding.BindingContext
             _bindingContextOwner = bindingContextOwner;
             _target = target;
         }
-
+#if !DOT42
         protected static string TargetPropertyName(Expression<Func<TTarget, object>> targetPropertyPath)
         {
             var parser = MvxBindingSingletonCache.Instance.PropertyExpressionParser;
@@ -203,7 +203,7 @@ namespace Cirrious.MvvmCross.Binding.BindingContext
             var sourcePropertyPath = parser.Parse(sourceProperty).Print();
             return sourcePropertyPath;
         }
-
+#endif
         protected static IMvxValueConverter ValueConverterFromName(string converterName)
         {
             var converter = MvxBindingSingletonCache.Instance.ValueConverterLookup.Find(converterName);

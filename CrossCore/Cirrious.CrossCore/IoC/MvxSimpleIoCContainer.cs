@@ -495,11 +495,13 @@ namespace Cirrious.CrossCore.IoC
                 object parameterValue;
                 if (!TryResolve(parameterInfo.ParameterType, out parameterValue))
                 {
+#if !DOT42
                     if (parameterInfo.IsOptional)
                     {
                         parameterValue = Type.Missing;
                     }
                     else
+#endif
                     {
                         throw new MvxIoCResolveException(
                             "Failed to resolve parameter for parameter {0} of type {1} when creating {2}",

@@ -68,7 +68,11 @@ namespace Cirrious.MvvmCross.Binding.Droid.Target
             {
                 shouldBeEnabled = _command.CanExecute(null);
             }
+#if !DOT42
             view.Enabled = shouldBeEnabled;
+#else
+            view.IsEnabled = shouldBeEnabled;
+#endif
         }
 
         private void OnCanExecuteChanged(object sender, EventArgs e)

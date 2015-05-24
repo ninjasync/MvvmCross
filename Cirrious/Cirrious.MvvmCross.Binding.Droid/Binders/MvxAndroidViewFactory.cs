@@ -52,11 +52,14 @@ namespace Cirrious.MvvmCross.Binding.Droid.Binders
                                           viewType.FullName);
                 }
                 return view;
+                
             }
+#if !DOT42 // TODO: check why this code was here, and if neccessary, catch something similar
             catch (ThreadAbortException)
             {
                 throw;
             }
+#endif
             catch (Exception exception)
             {
                 MvxBindingTrace.Trace(MvxTraceLevel.Error,

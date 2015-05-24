@@ -21,7 +21,9 @@ namespace Cirrious.MvvmCross.Binding
         IMvxAutoValueConverters AutoValueConverters { get; }
         IMvxBindingDescriptionParser BindingDescriptionParser { get; }
         IMvxLanguageBindingParser LanguageParser { get; }
+#if !DOT42
         IMvxPropertyExpressionParser PropertyExpressionParser { get; }
+#endif
         IMvxValueConverterLookup ValueConverterLookup { get; }
         IMvxBindingNameLookup DefaultBindingNameLookup { get; }
         IMvxBinder Binder { get; }

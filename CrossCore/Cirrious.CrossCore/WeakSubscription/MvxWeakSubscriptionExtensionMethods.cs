@@ -24,6 +24,7 @@ namespace Cirrious.CrossCore.WeakSubscription
             return new MvxNotifyPropertyChangedEventSubscription(source, eventHandler);
         }
 
+#if !DOT42
         public static MvxNamedNotifyPropertyChangedEventSubscription<T> WeakSubscribe<T>(this INotifyPropertyChanged source,
                                                                                Expression<Func<T>> property,
                                                                                EventHandler<PropertyChangedEventArgs>
@@ -31,6 +32,7 @@ namespace Cirrious.CrossCore.WeakSubscription
         {
             return new MvxNamedNotifyPropertyChangedEventSubscription<T>(source, property, eventHandler);
         }
+#endif
 
         public static MvxNamedNotifyPropertyChangedEventSubscription<T> WeakSubscribe<T>(this INotifyPropertyChanged source,
                                                                                string property,

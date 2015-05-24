@@ -13,6 +13,7 @@ using Android.Widget;
 
 namespace Cirrious.MvvmCross.Binding.Droid.Target
 {
+#if !DOT42 // TODO: implement RatingBarChange event in Dot42
     public class MvxRatingBarRatingTargetBinding : MvxAndroidTargetBinding
     {
         protected RatingBar RatingBar
@@ -70,4 +71,5 @@ namespace Cirrious.MvvmCross.Binding.Droid.Target
             base.Dispose(isDisposing);
         }
     }
+#endif
 }

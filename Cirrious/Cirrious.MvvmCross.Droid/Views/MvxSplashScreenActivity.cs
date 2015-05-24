@@ -36,7 +36,11 @@ namespace Cirrious.MvvmCross.Droid.Views
 
         protected virtual void RequestWindowFeatures()
         {
+#if !DOT42
             RequestWindowFeature(WindowFeatures.NoTitle);
+#else
+            RequestWindowFeature(Window.FEATURE_NO_TITLE);
+#endif
         }
 
         protected override void OnCreate(Bundle bundle)

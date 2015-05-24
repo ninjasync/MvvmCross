@@ -30,10 +30,12 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
             adapter.ItemTemplateId = itemTemplateId;
         }
 
+#if !DOT42
 		protected MvxExpandableListView(IntPtr javaReference, JniHandleOwnership transfer)
 			: base(javaReference, transfer)
 	    {
 	    }
+#endif
 
         // An expandableListView has ExpandableListAdapter as propertyname, but Adapter still exists but is always null.
         protected MvxExpandableListAdapter ThisAdapter
@@ -142,10 +144,10 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
             base.ItemLongClick += (sender, args) =>
             {
                 var type = GetPackedPositionType(args.Id);
-                long packedPos = ((ExpandableListView)args.Parent).GetExpandableListPosition(args.Position);
+                long packedPos = ((ExpandableListView)(object)args.Parent).GetExpandableListPosition(args.Position);
                 int groupPosition = GetPackedPositionGroup(packedPos);
                 int childPosition = GetPackedPositionChild(packedPos);
-
+#if !DOT42
                 if (type == PackedPositionType.Child)
                 {
                     this.ExecuteCommandOnItem(this.ItemLongClick, groupPosition, childPosition);
@@ -154,6 +156,16 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
                 {
                     this.ExecuteCommandOnGroup(this.GroupLongClick, groupPosition);
                 }
+#else
+                if (type == PACKED_POSITION_TYPE_CHILD)
+                {
+                    this.ExecuteCommandOnItem(this.ItemLongClick, groupPosition, childPosition);
+                }
+                else if (type == PACKED_POSITION_TYPE_GROUP)
+                {
+                    this.ExecuteCommandOnGroup(this.GroupLongClick, groupPosition);
+                }
+#endif
             };
         }
 

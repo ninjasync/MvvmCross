@@ -42,10 +42,12 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
             this.ChildViewRemoved += OnChildViewRemoved;
         }
 
+#if !DOT42
 		protected MvxRadioGroup(IntPtr javaReference, JniHandleOwnership transfer)
 			: base(javaReference, transfer)
 	    {
 	    }
+#endif
 
         public void AdapterOnDataSetChanged(object sender, NotifyCollectionChangedEventArgs eventArgs)
         {
@@ -65,7 +67,11 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
                 if (radioButton != null)
                 {
                     // radio buttons require an id so that they get un-checked correctly
+#if !DOT42
                     if (radioButton.Id == Android.Views.View.NoId)
+#else
+                    if (radioButton.Id == Android.Views.View.NO_ID)
+#endif
                     {
                         _generatedId += 1;
                         int rid = _generatedId;

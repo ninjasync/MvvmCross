@@ -7,6 +7,9 @@
 
 namespace Cirrious.MvvmCross.ViewModels
 {
+#if DOT42
+    [Dot42.IncludeType]
+#endif
     public abstract class MvxViewModel
         : MvxNavigatingObject
           , IMvxViewModel

@@ -16,6 +16,7 @@ namespace Cirrious.CrossCore.Droid.Views
     public abstract class MvxEventSourceTabActivity
         : TabActivity
           , IMvxEventSourceActivity
+          , IDisposable
     {
         protected override void OnCreate(Bundle bundle)
         {
@@ -78,12 +79,22 @@ namespace Cirrious.CrossCore.Droid.Views
             base.StartActivityForResult(intent, requestCode);
         }
 
+#if !DOT42
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             ActivityResultCalled.Raise(this, new MvxActivityResultParameters(requestCode, resultCode, data));
             base.OnActivityResult(requestCode, resultCode, data);
         }
+#else
+        protected override void OnActivityResult(int requestCode, int resultCode, Intent data)
+        {
+            ActivityResultCalled.Raise(this, new MvxActivityResultParameters(requestCode, resultCode, data));
+            base.OnActivityResult(requestCode, resultCode, data);
+        }
 
+#endif
+
+#if !DOT42
 		protected override void Dispose(bool disposing)
 		{
 			if (disposing)
@@ -92,6 +103,12 @@ namespace Cirrious.CrossCore.Droid.Views
 			}
 			base.Dispose(disposing);
 		}
+#else
+        public void Dispose()
+        {
+            DisposeCalled.Raise(this);
+        }
+#endif
 
         public event EventHandler DisposeCalled;
         public event EventHandler<MvxValueEventArgs<Bundle>> CreateWillBeCalled;

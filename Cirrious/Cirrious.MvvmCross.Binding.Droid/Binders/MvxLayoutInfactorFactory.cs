@@ -10,7 +10,11 @@ namespace Cirrious.MvvmCross.Binding.Droid.Binders
 {
     public static class MvxLayoutInfactorFactory
     {
+#if !DOT42
         private static readonly int SdkInt = (int)Build.VERSION.SdkInt;
+#else
+        private static readonly int SdkInt = (int)Build.VERSION.SDK_INT;
+#endif
         private static Field _layoutInflaterFactory2Field;
         private static bool _checkedField;
 
@@ -83,6 +87,7 @@ namespace Cirrious.MvvmCross.Binding.Droid.Binders
         {
             if (!_checkedField)
             {
+#if !DOT42
                 try
                 {
                     Class layoutInflaterClass = Class.FromType(typeof(LayoutInflater));
@@ -95,6 +100,19 @@ namespace Cirrious.MvvmCross.Binding.Droid.Binders
                         "ForceSetFactory2 Could not find field 'mFactory2' on class {0}; inflation may have unexpected results.",
                         Class.FromType(typeof(LayoutInflater)).Name);
                 }
+#else
+                try
+                {
+                    _layoutInflaterFactory2Field = typeof(LayoutInflater).JavaGetDeclaredField("mFactory2");
+                    _layoutInflaterFactory2Field.IsAccessible = true;
+                }
+                catch (NoSuchFieldException e)
+                {
+                    Mvx.Error(
+                        "ForceSetFactory2 Could not find field 'mFactory2' on class {0}; inflation may have unexpected results.",
+                        typeof(LayoutInflater).JavaGetName());
+                }
+#endif
                 _checkedField = true;
             }
 

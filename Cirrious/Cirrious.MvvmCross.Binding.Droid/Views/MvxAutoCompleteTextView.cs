@@ -37,10 +37,12 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
             this.ItemClick += OnItemClick;
         }
 
+#if !DOT42
 		protected MvxAutoCompleteTextView(IntPtr javaReference, JniHandleOwnership transfer)
 			: base(javaReference, transfer)
 	    {
 	    }
+#endif
 
         private void OnItemClick(object sender, AdapterView.ItemClickEventArgs itemClickEventArgs)
         {
@@ -84,8 +86,11 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
 
                 if (value != null)
                     value.PartialTextChanged += AdapterOnPartialTextChanged;
-
+#if !DOT42
                 base.Adapter = value;
+#else
+                base.SetAdapter(value);
+#endif
             }
         }
 

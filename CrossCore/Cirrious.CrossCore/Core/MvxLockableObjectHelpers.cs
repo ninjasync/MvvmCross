@@ -4,7 +4,7 @@
 // Contributions and inspirations noted in readme.md and license.txt
 // 
 // Project Lead - Stuart Lodge, @slodge, me@slodge.com
-
+#if !DOT42
 using System;
 using System.Threading;
 
@@ -63,3 +63,4 @@ namespace Cirrious.CrossCore.Core
         }
     }
 }
+#endif

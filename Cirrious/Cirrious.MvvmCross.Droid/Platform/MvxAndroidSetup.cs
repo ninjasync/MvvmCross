@@ -7,6 +7,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using Android.Content;
 using Android.Views;
@@ -62,7 +63,11 @@ namespace Cirrious.MvvmCross.Droid.Platform
 
         protected override IMvxPluginManager CreatePluginManager()
         {
+#if !DOT42
             return new MvxFilePluginManager(".Droid", ".dll");
+#else
+            return new MvxLoaderPluginManager();
+#endif
         }
 
         protected override IMvxTrace CreateDebugTrace()
@@ -227,7 +232,11 @@ namespace Cirrious.MvvmCross.Droid.Platform
             {
                 return new Dictionary<string, string>
                     {
+#if !DOT42
                         {"Mvx", "Cirrious.MvvmCross.Binding.Droid.Views"}
+#else
+                        {"Mvx", "mvvmCross_Dot42.Cirrious.MvvmCross.Binding.Droid.Views"}
+#endif
                     };
             }
         }
@@ -241,7 +250,11 @@ namespace Cirrious.MvvmCross.Droid.Platform
                         "Android.Views",
                         "Android.Widget",
                         "Android.Webkit",
+#if !DOT42
                         "Cirrious.MvvmCross.Binding.Droid.Views",
+#else
+                        "mvvmCross_Dot42.Cirrious.MvvmCross.Binding.Droid.Views",
+#endif
                     };
             }
         }
@@ -250,12 +263,14 @@ namespace Cirrious.MvvmCross.Droid.Platform
         {
             get
             {
-                return new List<Assembly>()
+                return new[] 
                     {
                         typeof (Android.Views.View).Assembly,
                         typeof (Cirrious.MvvmCross.Binding.Droid.Views.MvxDatePicker).Assembly,
                         this.GetType().Assembly,
-                    };
+                    }
+                    .Distinct()
+                    .ToList();
             }
         }
 

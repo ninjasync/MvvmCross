@@ -7,13 +7,16 @@
 
 using System;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
+using System.Threading.Tasks;
 using Android.Content;
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Core;
 using Cirrious.CrossCore.Exceptions;
 using Cirrious.CrossCore.IoC;
 using Cirrious.MvvmCross.Droid.Views;
+using Cirrious.CrossCore.Platform;
 
 namespace Cirrious.MvvmCross.Droid.Platform
 {
@@ -62,7 +65,6 @@ namespace Cirrious.MvvmCross.Droid.Platform
                 _currentSplashScreen = null;
             }
         }
-
         public virtual void InitializeFromSplashScreen(IMvxAndroidSplashScreenActivity splashScreen)
         {
             lock (LockObject)
@@ -84,7 +86,12 @@ namespace Cirrious.MvvmCross.Droid.Platform
             }
 
             _setup.InitializePrimary();
-            ThreadPool.QueueUserWorkItem(ignored =>
+
+#if !DOT42
+            WaitCallback action = ignored =>
+#else
+            Action action = () =>
+#endif
             {
                 _setup.InitializeSecondary();
                 lock (LockObject)
@@ -93,8 +100,30 @@ namespace Cirrious.MvvmCross.Droid.Platform
                     if (_currentSplashScreen != null)
                         _currentSplashScreen.InitializationComplete();
                 }
-            });
+            };
+#if !DOT42
+            ThreadPool.QueueUserWorkItem(action);
+#else
+            RunInBackground(action);
+#endif
         }
+
+#if DOT42
+        private static async void RunInBackground(Action action)
+        {
+            try
+            {
+                await Task.Run(action);
+            }
+            catch(Exception ex)
+            {
+                // TODO: find out why exceptions don't propagate to the main thread.
+                MvxTrace.Error("{0}: {1}\n{2}", ex.GetType().Name, ex.Message, ex.StackTrace);
+                throw;
+            }
+            
+        }
+#endif
 
         public static MvxAndroidSetupSingleton EnsureSingletonAvailable(Context applicationContext)
         {
@@ -136,13 +165,22 @@ namespace Cirrious.MvvmCross.Droid.Platform
 
         protected virtual Type FindSetupType()
         {
+#if !DOT42
             var query = from assembly in AppDomain.CurrentDomain.GetAssemblies()
                         from type in assembly.ExceptionSafeGetTypes()
                         where type.Name == "Setup"
                         where typeof (MvxAndroidSetup).IsAssignableFrom(type)
                         select type;
-
             return query.FirstOrDefault();
+#else
+            foreach (var type in Assembly.GetEntryAssembly().ExceptionSafeGetTypes())
+            {
+                //Console.WriteLine(type.FullName);
+                if (type.Name == "Setup" && typeof (MvxAndroidSetup).IsAssignableFrom(type))
+                    return type;
+            }
+            return null;
+#endif
         }
 
         protected override void Dispose(bool isDisposing)

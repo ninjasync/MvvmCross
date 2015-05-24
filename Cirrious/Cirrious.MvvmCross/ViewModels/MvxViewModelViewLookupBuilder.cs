@@ -23,7 +23,7 @@ namespace Cirrious.MvvmCross.ViewModels
         {
             var associatedTypeFinder = Mvx.Resolve<IMvxViewModelTypeFinder>();
 
-            var views = from assembly in sourceAssemblies
+            var views = from assembly in sourceAssemblies.Distinct()
                         from candidateViewType in assembly.ExceptionSafeGetTypes()
                         let viewModelType = associatedTypeFinder.FindTypeOrNull(candidateViewType)
                         where viewModelType != null

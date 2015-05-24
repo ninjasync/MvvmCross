@@ -39,7 +39,12 @@ namespace Cirrious.CrossCore.Plugins
                 return;
             }
 
-            loaderManager.Finders[pluginNamespace] = () => Activator.CreateInstance<TPlatformPlugin>();
+            loaderManager.Finders[pluginNamespace] = CreatePlatformPlugin;
+        }
+
+        private IMvxPlugin CreatePlatformPlugin()
+        {
+            return Activator.CreateInstance<TPlatformPlugin>();
         }
     }
 }

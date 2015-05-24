@@ -1,0 +1,1583 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9693E85E-16A9-4750-9414-C84BDD5FEBDD}</ProjectGuid>
+    <ProjectTypeGuids>{337B7DB7-2D1E-448D-BEBF-17E887A46E37};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MvvmCross.Dot42</RootNamespace>
+    <AssemblyName>MvvmCross.Dot42</AssemblyName>
+    <TargetFrameworkIdentifier>Android</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
+    <AndroidVersion>$(TargetFrameworkVersion)</AndroidVersion>
+    <SupportedCultures>
+    </SupportedCultures>
+    <ApkOutputs>false</ApkOutputs>
+    <GenerateAndroidManifest>false</GenerateAndroidManifest>
+    <ApkFilename>.apk</ApkFilename>
+    <PackageName>
+    </PackageName>
+    <Dot42ExtensionsPath Condition=" '$(Dot42ExtensionsPath)' == '' ">$(Registry:HKEY_CURRENT_USER\SOFTWARE\dot42\Android@ExtensionsPath)</Dot42ExtensionsPath>
+    <Dot42ExtensionsPath Condition=" '$(Dot42ExtensionsPath)' == '' ">$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\dot42\Android@ExtensionsPath)</Dot42ExtensionsPath>
+    <ApkCertificatePath>
+    </ApkCertificatePath>
+    <ApkCertificateThumbprint>
+    </ApkCertificateThumbprint>
+    <TargetSdkAndroidVersion />
+    <GenerateWcfProxy>false</GenerateWcfProxy>
+    <GenerateSetInstructionCode>false</GenerateSetInstructionCode>
+    <GenerateSetNextInstructionCode>false</GenerateSetNextInstructionCode>
+    <EnableCompilerCache>false</EnableCompilerCache>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\Mvx\Dot42\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;DOT42</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\Mvx\Dot42\</OutputPath>
+    <DefineConstants>TRACE;DOT42</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dot42" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Binders\IMvxAndroidViewBinder.cs">
+      <Link>MvvmCross.Binding.Droid\Binders\IMvxAndroidViewBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Binders\IMvxAndroidViewBinderFactory.cs">
+      <Link>MvvmCross.Binding.Droid\Binders\IMvxAndroidViewBinderFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Binders\IMvxAndroidViewFactory.cs">
+      <Link>MvvmCross.Binding.Droid\Binders\IMvxAndroidViewFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Binders\IMvxLayoutInfactorFactory.cs">
+      <Link>MvvmCross.Binding.Droid\Binders\IMvxLayoutInfactorFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Binders\IMvxLayoutInfactorFactoryFactory.cs">
+      <Link>MvvmCross.Binding.Droid\Binders\IMvxLayoutInfactorFactoryFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Binders\MvxAndroidViewBinder.cs">
+      <Link>MvvmCross.Binding.Droid\Binders\MvxAndroidViewBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Binders\MvxAndroidViewBinderFactory.cs">
+      <Link>MvvmCross.Binding.Droid\Binders\MvxAndroidViewBinderFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Binders\MvxAndroidViewFactory.cs">
+      <Link>MvvmCross.Binding.Droid\Binders\MvxAndroidViewFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Binders\MvxBindingLayoutInflatorFactory.cs">
+      <Link>MvvmCross.Binding.Droid\Binders\MvxBindingLayoutInflatorFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Binders\MvxLayoutInfactorFactory.cs">
+      <Link>MvvmCross.Binding.Droid\Binders\MvxLayoutInfactorFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Binders\MvxLayoutInflatorFactoryFactory.cs">
+      <Link>MvvmCross.Binding.Droid\Binders\MvxLayoutInflatorFactoryFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Binders\ViewTypeResolvers\IMvxAxmlNameViewTypeResolver.cs">
+      <Link>MvvmCross.Binding.Droid\Binders\ViewTypeResolvers\IMvxAxmlNameViewTypeResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Binders\ViewTypeResolvers\IMvxNamespaceListViewTypeResolver.cs">
+      <Link>MvvmCross.Binding.Droid\Binders\ViewTypeResolvers\IMvxNamespaceListViewTypeResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Binders\ViewTypeResolvers\IMvxViewTypeResolver.cs">
+      <Link>MvvmCross.Binding.Droid\Binders\ViewTypeResolvers\IMvxViewTypeResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Binders\ViewTypeResolvers\MvxAxmlNameViewTypeResolver.cs">
+      <Link>MvvmCross.Binding.Droid\Binders\ViewTypeResolvers\MvxAxmlNameViewTypeResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Binders\ViewTypeResolvers\MvxCachedViewTypeResolver.cs">
+      <Link>MvvmCross.Binding.Droid\Binders\ViewTypeResolvers\MvxCachedViewTypeResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Binders\ViewTypeResolvers\MvxCompositeViewTypeResolver.cs">
+      <Link>MvvmCross.Binding.Droid\Binders\ViewTypeResolvers\MvxCompositeViewTypeResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Binders\ViewTypeResolvers\MvxJustNameViewTypeResolver.cs">
+      <Link>MvvmCross.Binding.Droid\Binders\ViewTypeResolvers\MvxJustNameViewTypeResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Binders\ViewTypeResolvers\MvxLongLowerCaseViewTypeResolver.cs">
+      <Link>MvvmCross.Binding.Droid\Binders\ViewTypeResolvers\MvxLongLowerCaseViewTypeResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Binders\ViewTypeResolvers\MvxNamespaceListViewTypeResolver.cs">
+      <Link>MvvmCross.Binding.Droid\Binders\ViewTypeResolvers\MvxNamespaceListViewTypeResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Binders\ViewTypeResolvers\MvxReflectionViewTypeResolver.cs">
+      <Link>MvvmCross.Binding.Droid\Binders\ViewTypeResolvers\MvxReflectionViewTypeResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\BindingContext\IMvxAndroidBindingContext.cs">
+      <Link>MvvmCross.Binding.Droid\BindingContext\IMvxAndroidBindingContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\BindingContext\MvxAndroidBindingContext.cs">
+      <Link>MvvmCross.Binding.Droid\BindingContext\MvxAndroidBindingContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\BindingContext\MvxAndroidBindingContextHelpers.cs">
+      <Link>MvvmCross.Binding.Droid\BindingContext\MvxAndroidBindingContextHelpers.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\BindingContext\MvxAndroidBindingContextStack.cs">
+      <Link>MvvmCross.Binding.Droid\BindingContext\MvxAndroidBindingContextStack.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\BindingContext\MvxBindingContextOwnerExtensions.cs">
+      <Link>MvvmCross.Binding.Droid\BindingContext\MvxBindingContextOwnerExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\MvxAndroidBindingBuilder.cs">
+      <Link>MvvmCross.Binding.Droid\MvxAndroidBindingBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\MvxViewAssemblyBootstrapAction.cs">
+      <Link>MvvmCross.Binding.Droid\MvxViewAssemblyBootstrapAction.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\ResourceHelpers\IMvxAndroidBindingResource.cs">
+      <Link>MvvmCross.Binding.Droid\ResourceHelpers\IMvxAndroidBindingResource.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\ResourceHelpers\IMvxAppResourceTypeFinder.cs">
+      <Link>MvvmCross.Binding.Droid\ResourceHelpers\IMvxAppResourceTypeFinder.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxExpandableListViewSelectedItemTargetBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxExpandableListViewSelectedItemTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\MethodBinding\Cirrious.MvvmCross.Plugins.MethodBinding\MvxMethodSourceBinding.cs">
+      <Link>MvvmCross.Plugins.MethodBinding\MvxMethodSourceBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\MethodBinding\Cirrious.MvvmCross.Plugins.MethodBinding\MvxMethodSourceBindingFactoryExtension.cs">
+      <Link>MvvmCross.Plugins.MethodBinding\MvxMethodSourceBindingFactoryExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\MethodBinding\Cirrious.MvvmCross.Plugins.MethodBinding\PluginLoader.cs">
+      <Link>MvvmCross.Plugins.MethodBinding\PluginLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Visibility\Cirrious.MvvmCross.Plugins.Visibility\MvxBaseVisibilityValueConverter.cs">
+      <Link>MvvmCross.Plugins.Visibility\MvxBaseVisibilityValueConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Visibility\Cirrious.MvvmCross.Plugins.Visibility\MvxInvertedVisibilityValueConverter.cs">
+      <Link>MvvmCross.Plugins.Visibility\MvxInvertedVisibilityValueConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Visibility\Cirrious.MvvmCross.Plugins.Visibility\MvxVisibilityValueConverter.cs">
+      <Link>MvvmCross.Plugins.Visibility\MvxVisibilityValueConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Visibility\Cirrious.MvvmCross.Plugins.Visibility\PluginLoader.cs">
+      <Link>MvvmCross.Plugins.Visibility\PluginLoader.cs</Link>
+    </Compile>
+    <Compile Include="MvxNamedInstanceRegistryFiller.cs" />
+    <Compile Include="MvvmCross.Plugins.Visibility.Dot42\MvxDot42Visibility.cs" />
+    <Compile Include="MvvmCross.Plugins.Visibility.Dot42\Plugin.cs" />
+    <Compile Include="RegisterAttribute.cs" />
+    <ValuesResource Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\ResourceHelpers\MvxAndroidBindingResource.cs">
+      <Link>MvvmCross.Binding.Droid\ResourceHelpers\MvxAndroidBindingResource.cs</Link>
+    </ValuesResource>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\ResourceHelpers\MvxAppResourceTypeFinder.cs">
+      <Link>MvvmCross.Binding.Droid\ResourceHelpers\MvxAppResourceTypeFinder.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxAdapterViewSelectedItemPositionTargetBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxAdapterViewSelectedItemPositionTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxAndroidTargetBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxAndroidTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxAutoCompleteTextViewPartialTextTargetBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxAutoCompleteTextViewPartialTextTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxAutoCompleteTextViewSelectedObjectTargetBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxAutoCompleteTextViewSelectedObjectTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxBaseImageViewTargetBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxBaseImageViewTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxBaseStreamImageViewTargetBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxBaseStreamImageViewTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxBaseViewVisibleBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxBaseViewVisibleBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxCompoundButtonCheckedTargetBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxCompoundButtonCheckedTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxImageViewBitmapTargetBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxImageViewBitmapTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxImageViewDrawableNameTargetBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxImageViewDrawableNameTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxImageViewDrawableTargetBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxImageViewDrawableTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxImageViewImageTargetBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxImageViewImageTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxListViewSelectedItemTargetBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxListViewSelectedItemTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxRadioGroupSelectedItemBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxRadioGroupSelectedItemBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxRatingBarRatingTargetBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxRatingBarRatingTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxSeekBarProgressTargetBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxSeekBarProgressTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxSpinnerSelectedItemBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxSpinnerSelectedItemBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxTextViewTextTargetBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxTextViewTextTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxViewClickBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxViewClickBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxViewHiddenBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxViewHiddenBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxViewLongClickBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxViewLongClickBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxViewVisibleBinding.cs">
+      <Link>MvvmCross.Binding.Droid\Target\MvxViewVisibleBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\IMvxAdapter.cs">
+      <Link>MvvmCross.Binding.Droid\Views\IMvxAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\IMvxAdapterWithChangedEvent.cs">
+      <Link>MvvmCross.Binding.Droid\Views\IMvxAdapterWithChangedEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\IMvxLayoutInflater.cs">
+      <Link>MvvmCross.Binding.Droid\Views\IMvxLayoutInflater.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\IMvxListItemView.cs">
+      <Link>MvvmCross.Binding.Droid\Views\IMvxListItemView.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\IMvxWithChangeAdapter.cs">
+      <Link>MvvmCross.Binding.Droid\Views\IMvxWithChangeAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxAdapter.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxAdapterWithChangedEvent.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxAdapterWithChangedEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxAttributeHelpers.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxAttributeHelpers.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxAutoCompleteTextView.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxAutoCompleteTextView.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxBaseListItemView.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxBaseListItemView.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxDatePicker.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxDatePicker.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxExpandableListAdapter.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxExpandableListAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxExpandableListView.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxExpandableListView.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxFilteringAdapter.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxFilteringAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxFrameControl.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxFrameControl.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxFrameLayout.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxFrameLayout.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxGridView.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxGridView.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxImageView.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxImageView.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxLinearLayout.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxLinearLayout.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxListItemView.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxListItemView.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxListView.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxListView.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxRadioGroup.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxRadioGroup.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxRelativeLayout.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxRelativeLayout.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxSpinner.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxSpinner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxTableLayout.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxTableLayout.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxTimePicker.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxTimePicker.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Views\MvxViewGroupExtensions.cs">
+      <Link>MvvmCross.Binding.Droid\Views\MvxViewGroupExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Attributes\MvxSetToNullAfterBindingAttribute.cs">
+      <Link>MvvmCross.Binding\Attributes\MvxSetToNullAfterBindingAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Binders\IMvxAutoValueConverters.cs">
+      <Link>MvvmCross.Binding\Binders\IMvxAutoValueConverters.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Binders\IMvxBinder.cs">
+      <Link>MvvmCross.Binding\Binders\IMvxBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Binders\IMvxBindingDescriptionParser.cs">
+      <Link>MvvmCross.Binding\Binders\IMvxBindingDescriptionParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Binders\IMvxValueConverterLookup.cs">
+      <Link>MvvmCross.Binding\Binders\IMvxValueConverterLookup.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Binders\IMvxValueConverterRegistryFiller.cs">
+      <Link>MvvmCross.Binding\Binders\IMvxValueConverterRegistryFiller.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Binders\MvxAutoValueConverters.cs">
+      <Link>MvvmCross.Binding\Binders\MvxAutoValueConverters.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Binders\MvxFromTextBinder.cs">
+      <Link>MvvmCross.Binding\Binders\MvxFromTextBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Binders\MvxNamedInstanceRegistry.cs">
+      <Link>MvvmCross.Binding\Binders\MvxNamedInstanceRegistry.cs</Link>
+    </Compile>
+    <None Include="..\Cirrious\Cirrious.MvvmCross.Binding\Binders\MvxNamedInstanceRegistryFiller.cs">
+      <Link>MvvmCross.Binding\Binders\MvxNamedInstanceRegistryFiller.cs</Link>
+    </None>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Binders\MvxRegistryFillerExtensions.cs">
+      <Link>MvvmCross.Binding\Binders\MvxRegistryFillerExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Binders\MvxValueConverterRegistry.cs">
+      <Link>MvvmCross.Binding\Binders\MvxValueConverterRegistry.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Binders\MvxValueConverterRegistryFiller.cs">
+      <Link>MvvmCross.Binding\Binders\MvxValueConverterRegistryFiller.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\BindingContext\IMvxBindingContext.cs">
+      <Link>MvvmCross.Binding\BindingContext\IMvxBindingContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\BindingContext\IMvxBindingContextOwner.cs">
+      <Link>MvvmCross.Binding\BindingContext\IMvxBindingContextOwner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\BindingContext\IMvxBindingContextStack.cs">
+      <Link>MvvmCross.Binding\BindingContext\IMvxBindingContextStack.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\BindingContext\IMvxBindingNameLookup.cs">
+      <Link>MvvmCross.Binding\BindingContext\IMvxBindingNameLookup.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\BindingContext\IMvxBindingNameRegistry.cs">
+      <Link>MvvmCross.Binding\BindingContext\IMvxBindingNameRegistry.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\BindingContext\MvxBaseFluentBindingDescription.cs">
+      <Link>MvvmCross.Binding\BindingContext\MvxBaseFluentBindingDescription.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\BindingContext\MvxBindExtensions.cs">
+      <Link>MvvmCross.Binding\BindingContext\MvxBindExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\BindingContext\MvxBindingContext.cs">
+      <Link>MvvmCross.Binding\BindingContext\MvxBindingContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\BindingContext\MvxBindingContextOwnerExtensions.Clear.cs">
+      <Link>MvvmCross.Binding\BindingContext\MvxBindingContextOwnerExtensions.Clear.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\BindingContext\MvxBindingContextOwnerExtensions.cs">
+      <Link>MvvmCross.Binding\BindingContext\MvxBindingContextOwnerExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\BindingContext\MvxBindingContextOwnerExtensions.Fluent.cs">
+      <Link>MvvmCross.Binding\BindingContext\MvxBindingContextOwnerExtensions.Fluent.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\BindingContext\MvxBindingContextOwnerExtensions.Language.cs">
+      <Link>MvvmCross.Binding\BindingContext\MvxBindingContextOwnerExtensions.Language.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\BindingContext\MvxBindingContextOwnerExtensions.Statics.cs">
+      <Link>MvvmCross.Binding\BindingContext\MvxBindingContextOwnerExtensions.Statics.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\BindingContext\MvxBindingContextStack.cs">
+      <Link>MvvmCross.Binding\BindingContext\MvxBindingContextStack.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\BindingContext\MvxBindingContextStackRegistration.cs">
+      <Link>MvvmCross.Binding\BindingContext\MvxBindingContextStackRegistration.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\BindingContext\MvxBindingNameRegistry.cs">
+      <Link>MvvmCross.Binding\BindingContext\MvxBindingNameRegistry.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\BindingContext\MvxFluentBindingDescription.cs">
+      <Link>MvvmCross.Binding\BindingContext\MvxFluentBindingDescription.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\BindingContext\MvxFluentBindingDescriptionSet.cs">
+      <Link>MvvmCross.Binding\BindingContext\MvxFluentBindingDescriptionSet.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\BindingContext\MvxInlineBindingTarget.cs">
+      <Link>MvvmCross.Binding\BindingContext\MvxInlineBindingTarget.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\IMvxBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\IMvxBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\IMvxUpdateableBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\IMvxUpdateableBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\MvxBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\MvxBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\MvxBindingDescription.cs">
+      <Link>MvvmCross.Binding\Bindings\MvxBindingDescription.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\MvxBindingModeExtensionMethods.cs">
+      <Link>MvvmCross.Binding\Bindings\MvxBindingModeExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\MvxCompositeBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\MvxCompositeBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\MvxFullBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\MvxFullBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\SourceSteps\IMvxSourceStep.cs">
+      <Link>MvvmCross.Binding\Bindings\SourceSteps\IMvxSourceStep.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\SourceSteps\IMvxSourceStepFactory.cs">
+      <Link>MvvmCross.Binding\Bindings\SourceSteps\IMvxSourceStepFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\SourceSteps\IMvxSourceStepFactoryRegistry.cs">
+      <Link>MvvmCross.Binding\Bindings\SourceSteps\IMvxSourceStepFactoryRegistry.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\SourceSteps\MvxCombinerSourceStep.cs">
+      <Link>MvvmCross.Binding\Bindings\SourceSteps\MvxCombinerSourceStep.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\SourceSteps\MvxCombinerSourceStepDescription.cs">
+      <Link>MvvmCross.Binding\Bindings\SourceSteps\MvxCombinerSourceStepDescription.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\SourceSteps\MvxCombinerSourceStepFactory.cs">
+      <Link>MvvmCross.Binding\Bindings\SourceSteps\MvxCombinerSourceStepFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\SourceSteps\MvxLiteralSourceStep.cs">
+      <Link>MvvmCross.Binding\Bindings\SourceSteps\MvxLiteralSourceStep.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\SourceSteps\MvxLiteralSourceStepDescription.cs">
+      <Link>MvvmCross.Binding\Bindings\SourceSteps\MvxLiteralSourceStepDescription.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\SourceSteps\MvxLiteralSourceStepFactory.cs">
+      <Link>MvvmCross.Binding\Bindings\SourceSteps\MvxLiteralSourceStepFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\SourceSteps\MvxPathSourceStep.cs">
+      <Link>MvvmCross.Binding\Bindings\SourceSteps\MvxPathSourceStep.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\SourceSteps\MvxPathSourceStepDescription.cs">
+      <Link>MvvmCross.Binding\Bindings\SourceSteps\MvxPathSourceStepDescription.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\SourceSteps\MvxPathSourceStepFactory.cs">
+      <Link>MvvmCross.Binding\Bindings\SourceSteps\MvxPathSourceStepFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\SourceSteps\MvxSourceStep.cs">
+      <Link>MvvmCross.Binding\Bindings\SourceSteps\MvxSourceStep.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\SourceSteps\MvxSourceStepDescription.cs">
+      <Link>MvvmCross.Binding\Bindings\SourceSteps\MvxSourceStepDescription.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\SourceSteps\MvxSourceStepFactory.cs">
+      <Link>MvvmCross.Binding\Bindings\SourceSteps\MvxSourceStepFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\SourceSteps\MvxTypedSourceStepFactory.cs">
+      <Link>MvvmCross.Binding\Bindings\SourceSteps\MvxTypedSourceStepFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Source\Chained\MvxChainedSourceBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\Source\Chained\MvxChainedSourceBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Source\Chained\MvxIndexerChainedSourceBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\Source\Chained\MvxIndexerChainedSourceBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Source\Chained\MvxSimpleChainedSourceBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\Source\Chained\MvxSimpleChainedSourceBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Source\Construction\IMvxSourceBindingFactory.cs">
+      <Link>MvvmCross.Binding\Bindings\Source\Construction\IMvxSourceBindingFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Source\Construction\IMvxSourceBindingFactoryExtension.cs">
+      <Link>MvvmCross.Binding\Bindings\Source\Construction\IMvxSourceBindingFactoryExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Source\Construction\IMvxSourceBindingFactoryExtensionHost.cs">
+      <Link>MvvmCross.Binding\Bindings\Source\Construction\IMvxSourceBindingFactoryExtensionHost.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Source\Construction\MvxPropertySourceBindingFactoryExtension.cs">
+      <Link>MvvmCross.Binding\Bindings\Source\Construction\MvxPropertySourceBindingFactoryExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Source\Construction\MvxSourceBindingFactory.cs">
+      <Link>MvvmCross.Binding\Bindings\Source\Construction\MvxSourceBindingFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Source\IMvxSourceBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\Source\IMvxSourceBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Source\Leaf\MvxDirectToSourceBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\Source\Leaf\MvxDirectToSourceBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Source\Leaf\MvxIndexerLeafPropertyInfoSourceBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\Source\Leaf\MvxIndexerLeafPropertyInfoSourceBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Source\Leaf\MvxLeafPropertyInfoSourceBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\Source\Leaf\MvxLeafPropertyInfoSourceBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Source\Leaf\MvxSimpleLeafPropertyInfoSourceBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\Source\Leaf\MvxSimpleLeafPropertyInfoSourceBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Source\MvxMissingSourceBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\Source\MvxMissingSourceBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Source\MvxPropertyInfoSourceBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\Source\MvxPropertyInfoSourceBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Source\MvxSourceBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\Source\MvxSourceBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Source\MvxSourcePropertyBindingEventArgs.cs">
+      <Link>MvvmCross.Binding\Bindings\Source\MvxSourcePropertyBindingEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Target\Construction\IMvxPluginTargetBindingFactory.cs">
+      <Link>MvvmCross.Binding\Bindings\Target\Construction\IMvxPluginTargetBindingFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Target\Construction\IMvxTargetBindingFactory.cs">
+      <Link>MvvmCross.Binding\Bindings\Target\Construction\IMvxTargetBindingFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Target\Construction\IMvxTargetBindingFactoryRegistry.cs">
+      <Link>MvvmCross.Binding\Bindings\Target\Construction\IMvxTargetBindingFactoryRegistry.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Target\Construction\MvxCustomBindingFactory.cs">
+      <Link>MvvmCross.Binding\Bindings\Target\Construction\MvxCustomBindingFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Target\Construction\MvxPropertyInfoTargetBindingFactory.cs">
+      <Link>MvvmCross.Binding\Bindings\Target\Construction\MvxPropertyInfoTargetBindingFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Target\Construction\MvxSimplePropertyInfoTargetBindingFactory.cs">
+      <Link>MvvmCross.Binding\Bindings\Target\Construction\MvxSimplePropertyInfoTargetBindingFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Target\Construction\MvxTargetBindingFactoryRegistry.cs">
+      <Link>MvvmCross.Binding\Bindings\Target\Construction\MvxTargetBindingFactoryRegistry.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Target\Construction\MvxTargetBindingFactoryRegistryExtensions.cs">
+      <Link>MvvmCross.Binding\Bindings\Target\Construction\MvxTargetBindingFactoryRegistryExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Target\Construction\MvxTypeAndNamePair.cs">
+      <Link>MvvmCross.Binding\Bindings\Target\Construction\MvxTypeAndNamePair.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Target\IMvxTargetBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\Target\IMvxTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Target\MvxConvertingTargetBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\Target\MvxConvertingTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Target\MvxEventHandlerEventInfoTargetBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\Target\MvxEventHandlerEventInfoTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Target\MvxEventInfoTargetBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\Target\MvxEventInfoTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Target\MvxNullTargetBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\Target\MvxNullTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Target\MvxPropertyInfoTargetBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\Target\MvxPropertyInfoTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Target\MvxTargetBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\Target\MvxTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Target\MvxTargetChangedEventArgs.cs">
+      <Link>MvvmCross.Binding\Bindings\Target\MvxTargetChangedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Bindings\Target\MvxWithEventPropertyInfoTargetBinding.cs">
+      <Link>MvvmCross.Binding\Bindings\Target\MvxWithEventPropertyInfoTargetBinding.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\IMvxValueCombiner.cs">
+      <Link>MvvmCross.Binding\Combiners\IMvxValueCombiner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\IMvxValueCombinerLookup.cs">
+      <Link>MvvmCross.Binding\Combiners\IMvxValueCombinerLookup.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\IMvxValueCombinerRegistry.cs">
+      <Link>MvvmCross.Binding\Combiners\IMvxValueCombinerRegistry.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\IMvxValueCombinerRegistryFiller.cs">
+      <Link>MvvmCross.Binding\Combiners\IMvxValueCombinerRegistryFiller.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\MvxAddValueCombiner.cs">
+      <Link>MvvmCross.Binding\Combiners\MvxAddValueCombiner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\MvxDivideValueCombiner.cs">
+      <Link>MvvmCross.Binding\Combiners\MvxDivideValueCombiner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\MvxFormatValueCombiner.cs">
+      <Link>MvvmCross.Binding\Combiners\MvxFormatValueCombiner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\MvxIfValueCombiner.cs">
+      <Link>MvvmCross.Binding\Combiners\MvxIfValueCombiner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\MvxModulusValueCombiner.cs">
+      <Link>MvvmCross.Binding\Combiners\MvxModulusValueCombiner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\MvxMultiplyValueCombiner.cs">
+      <Link>MvvmCross.Binding\Combiners\MvxMultiplyValueCombiner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\MvxNumericOnlyValueCombiner.cs">
+      <Link>MvvmCross.Binding\Combiners\MvxNumericOnlyValueCombiner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\MvxObjectAsStringPairwiseValueCombiner.cs">
+      <Link>MvvmCross.Binding\Combiners\MvxObjectAsStringPairwiseValueCombiner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\MvxPairwiseValueCombiner.cs">
+      <Link>MvvmCross.Binding\Combiners\MvxPairwiseValueCombiner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\MvxSingleValueCombiner.cs">
+      <Link>MvvmCross.Binding\Combiners\MvxSingleValueCombiner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\MvxSubtractValueCombiner.cs">
+      <Link>MvvmCross.Binding\Combiners\MvxSubtractValueCombiner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\MvxValueCombiner.cs">
+      <Link>MvvmCross.Binding\Combiners\MvxValueCombiner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\MvxValueCombinerRegistry.cs">
+      <Link>MvvmCross.Binding\Combiners\MvxValueCombinerRegistry.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\MvxValueCombinerRegistryFiller.cs">
+      <Link>MvvmCross.Binding\Combiners\MvxValueCombinerRegistryFiller.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\MvxValueConverterValueCombiner.cs">
+      <Link>MvvmCross.Binding\Combiners\MvxValueConverterValueCombiner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\VeryExperimental\MvxBooleanValueCombiner.cs">
+      <Link>MvvmCross.Binding\Combiners\VeryExperimental\MvxBooleanValueCombiner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\VeryExperimental\MvxEqualToValueCombiner.cs">
+      <Link>MvvmCross.Binding\Combiners\VeryExperimental\MvxEqualToValueCombiner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\VeryExperimental\MvxGreaterThanOrEqualToValueCombiner.cs">
+      <Link>MvvmCross.Binding\Combiners\VeryExperimental\MvxGreaterThanOrEqualToValueCombiner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\VeryExperimental\MvxGreaterThanValueCombiner.cs">
+      <Link>MvvmCross.Binding\Combiners\VeryExperimental\MvxGreaterThanValueCombiner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\VeryExperimental\MvxLessThanOrEqualToValueCombiner.cs">
+      <Link>MvvmCross.Binding\Combiners\VeryExperimental\MvxLessThanOrEqualToValueCombiner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\VeryExperimental\MvxLessThanValueCombiner.cs">
+      <Link>MvvmCross.Binding\Combiners\VeryExperimental\MvxLessThanValueCombiner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Combiners\VeryExperimental\MvxNotEqualToPairwiseValueCombiner.cs">
+      <Link>MvvmCross.Binding\Combiners\VeryExperimental\MvxNotEqualToPairwiseValueCombiner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\ExpressionParse\IMvxParsedExpression.cs">
+      <Link>MvvmCross.Binding\ExpressionParse\IMvxParsedExpression.cs</Link>
+    </Compile>
+    <None Include="..\Cirrious\Cirrious.MvvmCross.Binding\ExpressionParse\IMvxPropertyExpressionParser.cs">
+      <Link>MvvmCross.Binding\ExpressionParse\IMvxPropertyExpressionParser.cs</Link>
+    </None>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\ExpressionParse\MvxParsedExpression.cs">
+      <Link>MvvmCross.Binding\ExpressionParse\MvxParsedExpression.cs</Link>
+    </Compile>
+    <None Include="..\Cirrious\Cirrious.MvvmCross.Binding\ExpressionParse\MvxPropertyExpressionParser.cs">
+      <Link>MvvmCross.Binding\ExpressionParse\MvxPropertyExpressionParser.cs</Link>
+    </None>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\ExtensionMethods\IMvxEditableTextView.cs">
+      <Link>MvvmCross.Binding\ExtensionMethods\IMvxEditableTextView.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\ExtensionMethods\MvxBindingExtensions.cs">
+      <Link>MvvmCross.Binding\ExtensionMethods\MvxBindingExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\ExtensionMethods\MvxEnumerableExtensions.cs">
+      <Link>MvvmCross.Binding\ExtensionMethods\MvxEnumerableExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\IMvxBindingSingletonCache.cs">
+      <Link>MvvmCross.Binding\IMvxBindingSingletonCache.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\MvxBindingBuilder.cs">
+      <Link>MvvmCross.Binding\MvxBindingBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\MvxBindingMode.cs">
+      <Link>MvvmCross.Binding\MvxBindingMode.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\MvxBindingRequest.cs">
+      <Link>MvvmCross.Binding\MvxBindingRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\MvxBindingSingletonCache.cs">
+      <Link>MvvmCross.Binding\MvxBindingSingletonCache.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\MvxBindingTrace.cs">
+      <Link>MvvmCross.Binding\MvxBindingTrace.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\MvxCoreBindingBuilder.cs">
+      <Link>MvvmCross.Binding\MvxCoreBindingBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Parse\Binding\IMvxBindingParser.cs">
+      <Link>MvvmCross.Binding\Parse\Binding\IMvxBindingParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Parse\Binding\Lang\IMvxLanguageBindingParser.cs">
+      <Link>MvvmCross.Binding\Parse\Binding\Lang\IMvxLanguageBindingParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Parse\Binding\Lang\MvxLanguageBindingParser.cs">
+      <Link>MvvmCross.Binding\Parse\Binding\Lang\MvxLanguageBindingParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Parse\Binding\MvxBindingDescriptionParser.cs">
+      <Link>MvvmCross.Binding\Parse\Binding\MvxBindingDescriptionParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Parse\Binding\MvxBindingParser.cs">
+      <Link>MvvmCross.Binding\Parse\Binding\MvxBindingParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Parse\Binding\MvxSerializableBindingDescription.cs">
+      <Link>MvvmCross.Binding\Parse\Binding\MvxSerializableBindingDescription.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Parse\Binding\MvxSerializableBindingSpecification.cs">
+      <Link>MvvmCross.Binding\Parse\Binding\MvxSerializableBindingSpecification.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Parse\Binding\Swiss\MvxSwissBindingParser.cs">
+      <Link>MvvmCross.Binding\Parse\Binding\Swiss\MvxSwissBindingParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Parse\Binding\Tibet\MvxTibetBindingParser.cs">
+      <Link>MvvmCross.Binding\Parse\Binding\Tibet\MvxTibetBindingParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Parse\PropertyPath\IMvxSourcePropertyPathParser.cs">
+      <Link>MvvmCross.Binding\Parse\PropertyPath\IMvxSourcePropertyPathParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Parse\PropertyPath\MvxSourcePropertyPathParser.cs">
+      <Link>MvvmCross.Binding\Parse\PropertyPath\MvxSourcePropertyPathParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Parse\PropertyPath\PropertyTokens\MvxEmptyPropertyToken.cs">
+      <Link>MvvmCross.Binding\Parse\PropertyPath\PropertyTokens\MvxEmptyPropertyToken.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Parse\PropertyPath\PropertyTokens\MvxIndexerPropertyToken.cs">
+      <Link>MvvmCross.Binding\Parse\PropertyPath\PropertyTokens\MvxIndexerPropertyToken.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Parse\PropertyPath\PropertyTokens\MvxIntegerIndexerPropertyToken.cs">
+      <Link>MvvmCross.Binding\Parse\PropertyPath\PropertyTokens\MvxIntegerIndexerPropertyToken.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Parse\PropertyPath\PropertyTokens\MvxPropertyNamePropertyToken.cs">
+      <Link>MvvmCross.Binding\Parse\PropertyPath\PropertyTokens\MvxPropertyNamePropertyToken.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Parse\PropertyPath\PropertyTokens\MvxPropertyToken.cs">
+      <Link>MvvmCross.Binding\Parse\PropertyPath\PropertyTokens\MvxPropertyToken.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Parse\PropertyPath\PropertyTokens\MvxStringIndexerPropertyToken.cs">
+      <Link>MvvmCross.Binding\Parse\PropertyPath\PropertyTokens\MvxStringIndexerPropertyToken.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\ValueConverters\MvxCommandParameterValueConverter.cs">
+      <Link>MvvmCross.Binding\ValueConverters\MvxCommandParameterValueConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\ValueConverters\MvxWrappingCommand.cs">
+      <Link>MvvmCross.Binding\ValueConverters\MvxWrappingCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding\Views\MvxBaseImageViewLoader.cs">
+      <Link>MvvmCross.Binding\Views\MvxBaseImageViewLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Platform\IMvxAndroidActivityLifeTimeListener.cs">
+      <Link>MvvmCross.Droid\Platform\IMvxAndroidActivityLifeTimeListener.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Platform\IMvxSavedStateConverter.cs">
+      <Link>MvvmCross.Droid\Platform\IMvxSavedStateConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Platform\MvxAndroidSetup.cs">
+      <Link>MvvmCross.Droid\Platform\MvxAndroidSetup.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Platform\MvxAndroidSetupSingleton.cs">
+      <Link>MvvmCross.Droid\Platform\MvxAndroidSetupSingleton.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Platform\MvxAndroidTask.cs">
+      <Link>MvvmCross.Droid\Platform\MvxAndroidTask.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Platform\MvxDebugTrace.cs">
+      <Link>MvvmCross.Droid\Platform\MvxDebugTrace.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Simple\MvxSimpleAndroidSetup.cs">
+      <Link>MvvmCross.Droid\Simple\MvxSimpleAndroidSetup.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Simple\MvxSimpleBindingActivity.cs">
+      <Link>MvvmCross.Droid\Simple\MvxSimpleBindingActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Simple\MvxSimpleEmptyAndroidApp.cs">
+      <Link>MvvmCross.Droid\Simple\MvxSimpleEmptyAndroidApp.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\IMvxAndroidSplashScreenActivity.cs">
+      <Link>MvvmCross.Droid\Views\IMvxAndroidSplashScreenActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\IMvxAndroidView.cs">
+      <Link>MvvmCross.Droid\Views\IMvxAndroidView.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\IMvxAndroidViewModelLoader.cs">
+      <Link>MvvmCross.Droid\Views\IMvxAndroidViewModelLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\IMvxAndroidViewModelRequestTranslator.cs">
+      <Link>MvvmCross.Droid\Views\IMvxAndroidViewModelRequestTranslator.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\IMvxAndroidViewPresenter.cs">
+      <Link>MvvmCross.Droid\Views\IMvxAndroidViewPresenter.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\IMvxAndroidViewsContainer.cs">
+      <Link>MvvmCross.Droid\Views\IMvxAndroidViewsContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\IMvxChildViewModelCache.cs">
+      <Link>MvvmCross.Droid\Views\IMvxChildViewModelCache.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\IMvxChildViewModelOwner.cs">
+      <Link>MvvmCross.Droid\Views\IMvxChildViewModelOwner.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\IMvxMultipleViewModelCache.cs">
+      <Link>MvvmCross.Droid\Views\IMvxMultipleViewModelCache.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\IMvxSingleViewModelCache.cs">
+      <Link>MvvmCross.Droid\Views\IMvxSingleViewModelCache.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\MvxActivity.cs">
+      <Link>MvvmCross.Droid\Views\MvxActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\MvxActivityAdapter.cs">
+      <Link>MvvmCross.Droid\Views\MvxActivityAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\MvxActivityViewExtensions.cs">
+      <Link>MvvmCross.Droid\Views\MvxActivityViewExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\MvxAndroidLifetimeMonitor.cs">
+      <Link>MvvmCross.Droid\Views\MvxAndroidLifetimeMonitor.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\MvxAndroidMainThreadDispatcher.cs">
+      <Link>MvvmCross.Droid\Views\MvxAndroidMainThreadDispatcher.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\MvxAndroidViewDispatcher.cs">
+      <Link>MvvmCross.Droid\Views\MvxAndroidViewDispatcher.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\MvxAndroidViewPresenter.cs">
+      <Link>MvvmCross.Droid\Views\MvxAndroidViewPresenter.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\MvxAndroidViewsContainer.cs">
+      <Link>MvvmCross.Droid\Views\MvxAndroidViewsContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\MvxBindingActivityAdapter.cs">
+      <Link>MvvmCross.Droid\Views\MvxBindingActivityAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\MvxChildViewModelCache.cs">
+      <Link>MvvmCross.Droid\Views\MvxChildViewModelCache.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\MvxChildViewModelOwnerAdapter.cs">
+      <Link>MvvmCross.Droid\Views\MvxChildViewModelOwnerAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\MvxChildViewModelOwnerExtensions.cs">
+      <Link>MvvmCross.Droid\Views\MvxChildViewModelOwnerExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\MvxMultipleViewModelCache.cs">
+      <Link>MvvmCross.Droid\Views\MvxMultipleViewModelCache.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\MvxSavedStateConverter.cs">
+      <Link>MvvmCross.Droid\Views\MvxSavedStateConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\MvxSingleViewModelCache.cs">
+      <Link>MvvmCross.Droid\Views\MvxSingleViewModelCache.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\MvxSplashScreenActivity.cs">
+      <Link>MvvmCross.Droid\Views\MvxSplashScreenActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\MvxTabActivity.cs">
+      <Link>MvvmCross.Droid\Views\MvxTabActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Droid\Views\MvxTranslatedIntent.cs">
+      <Link>MvvmCross.Droid\Views\MvxTranslatedIntent.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Localization\IMvxLanguageBinder.cs">
+      <Link>MvvmCross.Localization\IMvxLanguageBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Localization\IMvxTextProvider.cs">
+      <Link>MvvmCross.Localization\IMvxTextProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Localization\MvxLanguageBinder.cs">
+      <Link>MvvmCross.Localization\MvxLanguageBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross.Localization\MvxLanguageConverter.cs">
+      <Link>MvvmCross.Localization\MvxLanguageConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\IMvxSingletonCache.cs">
+      <Link>MvvmCross\IMvxSingletonCache.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\MvxSingletonCache.cs">
+      <Link>MvvmCross\MvxSingletonCache.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Parse\StringDictionary\IMvxStringDictionaryParser.cs">
+      <Link>MvvmCross\Parse\StringDictionary\IMvxStringDictionaryParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Parse\StringDictionary\IMvxStringDictionaryWriter.cs">
+      <Link>MvvmCross\Parse\StringDictionary\IMvxStringDictionaryWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Parse\StringDictionary\MvxStringDictionaryParser.cs">
+      <Link>MvvmCross\Parse\StringDictionary\MvxStringDictionaryParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Parse\StringDictionary\MvxStringDictionaryWriter.cs">
+      <Link>MvvmCross\Parse\StringDictionary\MvxStringDictionaryWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Parse\StringDictionary\MvxViewModelRequestCustomTextSerializer.cs">
+      <Link>MvvmCross\Parse\StringDictionary\MvxViewModelRequestCustomTextSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Platform\IMvxFillableStringToTypeParser.cs">
+      <Link>MvvmCross\Platform\IMvxFillableStringToTypeParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Platform\IMvxLifetime.cs">
+      <Link>MvvmCross\Platform\IMvxLifetime.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Platform\IMvxSettings.cs">
+      <Link>MvvmCross\Platform\IMvxSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Platform\IMvxStringToTypeParser.cs">
+      <Link>MvvmCross\Platform\IMvxStringToTypeParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Platform\MvxLifetimeEvent.cs">
+      <Link>MvvmCross\Platform\MvxLifetimeEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Platform\MvxLifetimeEventArgs.cs">
+      <Link>MvvmCross\Platform\MvxLifetimeEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Platform\MvxLifetimeMonitor.cs">
+      <Link>MvvmCross\Platform\MvxLifetimeMonitor.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Platform\MvxSettings.cs">
+      <Link>MvvmCross\Platform\MvxSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Platform\MvxSetup.cs">
+      <Link>MvvmCross\Platform\MvxSetup.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Platform\MvxSimplePropertyDictionaryExtensionMethods.cs">
+      <Link>MvvmCross\Platform\MvxSimplePropertyDictionaryExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Platform\MvxStringToTypeParser.cs">
+      <Link>MvvmCross\Platform\MvxStringToTypeParser.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\IMvxApplication.cs">
+      <Link>MvvmCross\ViewModels\IMvxApplication.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\IMvxAppStart.cs">
+      <Link>MvvmCross\ViewModels\IMvxAppStart.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\IMvxBundle.cs">
+      <Link>MvvmCross\ViewModels\IMvxBundle.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\IMvxCommand.cs">
+      <Link>MvvmCross\ViewModels\IMvxCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\IMvxCommandCollection.cs">
+      <Link>MvvmCross\ViewModels\IMvxCommandCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\IMvxCommandCollectionBuilder.cs">
+      <Link>MvvmCross\ViewModels\IMvxCommandCollectionBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\IMvxInpcInterceptor.cs">
+      <Link>MvvmCross\ViewModels\IMvxInpcInterceptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\IMvxInteraction.cs">
+      <Link>MvvmCross\ViewModels\IMvxInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\IMvxNameMapping.cs">
+      <Link>MvvmCross\ViewModels\IMvxNameMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\IMvxNavigationSerializer.cs">
+      <Link>MvvmCross\ViewModels\IMvxNavigationSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\IMvxNotifyPropertyChanged.cs">
+      <Link>MvvmCross\ViewModels\IMvxNotifyPropertyChanged.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\IMvxTypeFinder.cs">
+      <Link>MvvmCross\ViewModels\IMvxTypeFinder.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\IMvxTypeToTypeLookupBuilder.cs">
+      <Link>MvvmCross\ViewModels\IMvxTypeToTypeLookupBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\IMvxViewModel.cs">
+      <Link>MvvmCross\ViewModels\IMvxViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\IMvxViewModelByNameLookup.cs">
+      <Link>MvvmCross\ViewModels\IMvxViewModelByNameLookup.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\IMvxViewModelByNameRegistry.cs">
+      <Link>MvvmCross\ViewModels\IMvxViewModelByNameRegistry.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\IMvxViewModelLoader.cs">
+      <Link>MvvmCross\ViewModels\IMvxViewModelLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\IMvxViewModelLocator.cs">
+      <Link>MvvmCross\ViewModels\IMvxViewModelLocator.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\IMvxViewModelLocatorCollection.cs">
+      <Link>MvvmCross\ViewModels\IMvxViewModelLocatorCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\IMvxViewModelTypeFinder.cs">
+      <Link>MvvmCross\ViewModels\IMvxViewModelTypeFinder.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxApplication.cs">
+      <Link>MvvmCross\ViewModels\MvxApplication.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxAppStart.cs">
+      <Link>MvvmCross\ViewModels\MvxAppStart.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxBundle.cs">
+      <Link>MvvmCross\ViewModels\MvxBundle.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxClosePresentationHint.cs">
+      <Link>MvvmCross\ViewModels\MvxClosePresentationHint.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxCommand.cs">
+      <Link>MvvmCross\ViewModels\MvxCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxCommandAttribute.cs">
+      <Link>MvvmCross\ViewModels\MvxCommandAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxCommandCollection.cs">
+      <Link>MvvmCross\ViewModels\MvxCommandCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxCommandCollectionBuilder.cs">
+      <Link>MvvmCross\ViewModels\MvxCommandCollectionBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxDefaultViewModelLocator.cs">
+      <Link>MvvmCross\ViewModels\MvxDefaultViewModelLocator.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxInpcInterceptionResult.cs">
+      <Link>MvvmCross\ViewModels\MvxInpcInterceptionResult.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxInteraction.cs">
+      <Link>MvvmCross\ViewModels\MvxInteraction.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxInteractionExtensionMethods.cs">
+      <Link>MvvmCross\ViewModels\MvxInteractionExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxJsonNavigationSerializer.cs">
+      <Link>MvvmCross\ViewModels\MvxJsonNavigationSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxNavigatingObject.cs">
+      <Link>MvvmCross\ViewModels\MvxNavigatingObject.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxNavigationSerializer.cs">
+      <Link>MvvmCross\ViewModels\MvxNavigationSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxNotifyPropertyChanged.cs">
+      <Link>MvvmCross\ViewModels\MvxNotifyPropertyChanged.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxNotifyPropertyChangedExtensions.cs">
+      <Link>MvvmCross\ViewModels\MvxNotifyPropertyChangedExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxNullViewModel.cs">
+      <Link>MvvmCross\ViewModels\MvxNullViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxPostfixAwareViewToViewModelNameMapping.cs">
+      <Link>MvvmCross\ViewModels\MvxPostfixAwareViewToViewModelNameMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxPresentationHint.cs">
+      <Link>MvvmCross\ViewModels\MvxPresentationHint.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxPropertyChangedListener.cs">
+      <Link>MvvmCross\ViewModels\MvxPropertyChangedListener.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxRequestedBy.cs">
+      <Link>MvvmCross\ViewModels\MvxRequestedBy.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxRequestedByType.cs">
+      <Link>MvvmCross\ViewModels\MvxRequestedByType.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxStringDictionaryNavigationSerializer.cs">
+      <Link>MvvmCross\ViewModels\MvxStringDictionaryNavigationSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxViewForAttribute.cs">
+      <Link>MvvmCross\ViewModels\MvxViewForAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxViewModel.cs">
+      <Link>MvvmCross\ViewModels\MvxViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxViewModelByNameLookup.cs">
+      <Link>MvvmCross\ViewModels\MvxViewModelByNameLookup.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxViewModelExtensions.cs">
+      <Link>MvvmCross\ViewModels\MvxViewModelExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxViewModelLoader.cs">
+      <Link>MvvmCross\ViewModels\MvxViewModelLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxViewModelRequest.cs">
+      <Link>MvvmCross\ViewModels\MvxViewModelRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxViewModelViewLookupBuilder.cs">
+      <Link>MvvmCross\ViewModels\MvxViewModelViewLookupBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxViewModelViewTypeFinder.cs">
+      <Link>MvvmCross\ViewModels\MvxViewModelViewTypeFinder.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\ViewModels\MvxViewToViewModelNameMapping.cs">
+      <Link>MvvmCross\ViewModels\MvxViewToViewModelNameMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Views\IMvxView.cs">
+      <Link>MvvmCross\Views\IMvxView.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Views\IMvxViewDispatcher.cs">
+      <Link>MvvmCross\Views\IMvxViewDispatcher.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Views\IMvxViewFinder.cs">
+      <Link>MvvmCross\Views\IMvxViewFinder.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Views\IMvxViewPresenter.cs">
+      <Link>MvvmCross\Views\IMvxViewPresenter.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Views\IMvxViewsContainer.cs">
+      <Link>MvvmCross\Views\IMvxViewsContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Views\MvxViewExtensionMethods.cs">
+      <Link>MvvmCross\Views\MvxViewExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious\Cirrious.MvvmCross\Views\MvxViewsContainer.cs">
+      <Link>MvvmCross\Views\MvxViewsContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore.Droid\IMvxAndroidGlobals.cs">
+      <Link>CrossCore.Droid\IMvxAndroidGlobals.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore.Droid\MvxJavaContainer.cs">
+      <Link>CrossCore.Droid\MvxJavaContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore.Droid\MvxReplaceableJavaContainer.cs">
+      <Link>CrossCore.Droid\MvxReplaceableJavaContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore.Droid\Platform\IMvxAndroidCurrentTopActivity.cs">
+      <Link>CrossCore.Droid\Platform\IMvxAndroidCurrentTopActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore.Droid\Platform\IMvxIntentResultSink.cs">
+      <Link>CrossCore.Droid\Platform\IMvxIntentResultSink.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore.Droid\Platform\IMvxIntentResultSource.cs">
+      <Link>CrossCore.Droid\Platform\IMvxIntentResultSource.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore.Droid\Platform\MvxAndroidTask.cs">
+      <Link>CrossCore.Droid\Platform\MvxAndroidTask.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore.Droid\Platform\MvxDateTimeExtensionMethods.cs">
+      <Link>CrossCore.Droid\Platform\MvxDateTimeExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore.Droid\Platform\MvxIntentResultSink.cs">
+      <Link>CrossCore.Droid\Platform\MvxIntentResultSink.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore.Droid\Platform\MvxJavaDateUtils.cs">
+      <Link>CrossCore.Droid\Platform\MvxJavaDateUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore.Droid\Views\IMvxEventSourceActivity.cs">
+      <Link>CrossCore.Droid\Views\IMvxEventSourceActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore.Droid\Views\IMvxStartActivityForResult.cs">
+      <Link>CrossCore.Droid\Views\IMvxStartActivityForResult.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore.Droid\Views\MvxActivityResultParameters.cs">
+      <Link>CrossCore.Droid\Views\MvxActivityResultParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore.Droid\Views\MvxBaseActivityAdapter.cs">
+      <Link>CrossCore.Droid\Views\MvxBaseActivityAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore.Droid\Views\MvxEventSourceActivity.cs">
+      <Link>CrossCore.Droid\Views\MvxEventSourceActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore.Droid\Views\MvxEventSourceTabActivity.cs">
+      <Link>CrossCore.Droid\Views\MvxEventSourceTabActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore.Droid\Views\MvxIntentRequestCode.cs">
+      <Link>CrossCore.Droid\Views\MvxIntentRequestCode.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore.Droid\Views\MvxIntentResultEventArgs.cs">
+      <Link>CrossCore.Droid\Views\MvxIntentResultEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore.Droid\Views\MvxStartActivityForResultParameters.cs">
+      <Link>CrossCore.Droid\Views\MvxStartActivityForResultParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\BindingFlags.cs">
+      <Link>CrossCore\BindingFlags.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Converters\IMvxValueConverter.cs">
+      <Link>CrossCore\Converters\IMvxValueConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Converters\IMvxValueConverterRegistry.cs">
+      <Link>CrossCore\Converters\IMvxValueConverterRegistry.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Converters\MvxBindingConstant.cs">
+      <Link>CrossCore\Converters\MvxBindingConstant.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Converters\MvxValueConverter.cs">
+      <Link>CrossCore\Converters\MvxValueConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Core\IMvxApplicable.cs">
+      <Link>CrossCore\Core\IMvxApplicable.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Core\IMvxApplicableTo.cs">
+      <Link>CrossCore\Core\IMvxApplicableTo.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Core\IMvxDataConsumer.cs">
+      <Link>CrossCore\Core\IMvxDataConsumer.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Core\IMvxDisposeSource.cs">
+      <Link>CrossCore\Core\IMvxDisposeSource.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Core\IMvxMainThreadDispatcher.cs">
+      <Link>CrossCore\Core\IMvxMainThreadDispatcher.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Core\MvxAllThreadDispatchingObject.cs">
+      <Link>CrossCore\Core\MvxAllThreadDispatchingObject.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Core\MvxApplicable.cs">
+      <Link>CrossCore\Core\MvxApplicable.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Core\MvxApplicableExtensions.cs">
+      <Link>CrossCore\Core\MvxApplicableExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Core\MvxApplicableTo.cs">
+      <Link>CrossCore\Core\MvxApplicableTo.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Core\MvxAsyncDispatcher.cs">
+      <Link>CrossCore\Core\MvxAsyncDispatcher.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Core\MvxDelegateExtensionMethods.cs">
+      <Link>CrossCore\Core\MvxDelegateExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Core\MvxLockableObject.cs">
+      <Link>CrossCore\Core\MvxLockableObject.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Core\MvxLockableObjectHelpers.cs">
+      <Link>CrossCore\Core\MvxLockableObjectHelpers.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Core\MvxMainThreadDispatcher.cs">
+      <Link>CrossCore\Core\MvxMainThreadDispatcher.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Core\MvxMainThreadDispatchingObject.cs">
+      <Link>CrossCore\Core\MvxMainThreadDispatchingObject.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Core\MvxObjectExtensions.cs">
+      <Link>CrossCore\Core\MvxObjectExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Core\MvxPropertyNameExtensionMethods.cs">
+      <Link>CrossCore\Core\MvxPropertyNameExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Core\MvxSingleton.cs">
+      <Link>CrossCore\Core\MvxSingleton.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Core\MvxValueEventArgs.cs">
+      <Link>CrossCore\Core\MvxValueEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Exceptions\MvxException.cs">
+      <Link>CrossCore\Exceptions\MvxException.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Exceptions\MvxExceptionExtensionMethods.cs">
+      <Link>CrossCore\Exceptions\MvxExceptionExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Exceptions\MvxIoCResolveException.cs">
+      <Link>CrossCore\Exceptions\MvxIoCResolveException.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\ExtensionMethods\MvxCrossCoreExtensions.cs">
+      <Link>CrossCore\ExtensionMethods\MvxCrossCoreExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\IoC\IMvxConsumer.cs">
+      <Link>CrossCore\IoC\IMvxConsumer.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\IoC\IMvxIoCOptions.cs">
+      <Link>CrossCore\IoC\IMvxIoCOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\IoC\IMvxIoCProvider.cs">
+      <Link>CrossCore\IoC\IMvxIoCProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\IoC\IMvxProducer.cs">
+      <Link>CrossCore\IoC\IMvxProducer.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\IoC\IMvxPropertyInjector.cs">
+      <Link>CrossCore\IoC\IMvxPropertyInjector.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\IoC\IMvxPropertyInjectorOptions.cs">
+      <Link>CrossCore\IoC\IMvxPropertyInjectorOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\IoC\IMvxTypeCache.cs">
+      <Link>CrossCore\IoC\IMvxTypeCache.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\IoC\MvxConditionalConventionalAttribute.cs">
+      <Link>CrossCore\IoC\MvxConditionalConventionalAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\IoC\MvxConventionAttributeExtensionMethods.cs">
+      <Link>CrossCore\IoC\MvxConventionAttributeExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\IoC\MvxInjectAttribute.cs">
+      <Link>CrossCore\IoC\MvxInjectAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\IoC\MvxIoCExtensions.cs">
+      <Link>CrossCore\IoC\MvxIoCExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\IoC\MvxIoCOptions.cs">
+      <Link>CrossCore\IoC\MvxIoCOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\IoC\MvxLazySingletonCreator.cs">
+      <Link>CrossCore\IoC\MvxLazySingletonCreator.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\IoC\MvxPropertyInjectingIoCContainer.cs">
+      <Link>CrossCore\IoC\MvxPropertyInjectingIoCContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\IoC\MvxPropertyInjection.cs">
+      <Link>CrossCore\IoC\MvxPropertyInjection.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\IoC\MvxPropertyInjector.cs">
+      <Link>CrossCore\IoC\MvxPropertyInjector.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\IoC\MvxPropertyInjectorOptions.cs">
+      <Link>CrossCore\IoC\MvxPropertyInjectorOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\IoC\MvxSimpleIoCContainer.cs">
+      <Link>CrossCore\IoC\MvxSimpleIoCContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\IoC\MvxTypeCache.cs">
+      <Link>CrossCore\IoC\MvxTypeCache.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\IoC\MvxTypeExtensions.cs">
+      <Link>CrossCore\IoC\MvxTypeExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\IoC\MvxUnconventionalAttribute.cs">
+      <Link>CrossCore\IoC\MvxUnconventionalAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Mvx.cs">
+      <Link>CrossCore\Mvx.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Parse\MvxParser.cs">
+      <Link>CrossCore\Parse\MvxParser.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Platform\IMvxBootstrapAction.cs">
+      <Link>CrossCore\Platform\IMvxBootstrapAction.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Platform\IMvxImageHelper.cs">
+      <Link>CrossCore\Platform\IMvxImageHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Platform\IMvxJsonConverter.cs">
+      <Link>CrossCore\Platform\IMvxJsonConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Platform\IMvxNamedInstanceRegistry.cs">
+      <Link>CrossCore\Platform\IMvxNamedInstanceRegistry.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Platform\IMvxResourceLoader.cs">
+      <Link>CrossCore\Platform\IMvxResourceLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Platform\IMvxTextSerializer.cs">
+      <Link>CrossCore\Platform\IMvxTextSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Platform\IMvxTrace.cs">
+      <Link>CrossCore\Platform\IMvxTrace.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Platform\MvxBootstrapRunner.cs">
+      <Link>CrossCore\Platform\MvxBootstrapRunner.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Platform\MvxDebugOnlyTrace.cs">
+      <Link>CrossCore\Platform\MvxDebugOnlyTrace.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Platform\MvxStopWatch.cs">
+      <Link>CrossCore\Platform\MvxStopWatch.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Platform\MvxTrace.cs">
+      <Link>CrossCore\Platform\MvxTrace.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Platform\MvxTraceLevel.cs">
+      <Link>CrossCore\Platform\MvxTraceLevel.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Plugins\IMvxConfigurablePlugin.cs">
+      <Link>CrossCore\Plugins\IMvxConfigurablePlugin.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Plugins\IMvxConfigurablePluginLoader.cs">
+      <Link>CrossCore\Plugins\IMvxConfigurablePluginLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Plugins\IMvxLoaderPluginManager.cs">
+      <Link>CrossCore\Plugins\IMvxLoaderPluginManager.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Plugins\IMvxPlugin.cs">
+      <Link>CrossCore\Plugins\IMvxPlugin.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Plugins\IMvxPluginConfiguration.cs">
+      <Link>CrossCore\Plugins\IMvxPluginConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Plugins\IMvxPluginLoader.cs">
+      <Link>CrossCore\Plugins\IMvxPluginLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Plugins\IMvxPluginManager.cs">
+      <Link>CrossCore\Plugins\IMvxPluginManager.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Plugins\MvxFilePluginManager.cs">
+      <Link>CrossCore\Plugins\MvxFilePluginManager.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Plugins\MvxLoaderPluginBootstrapAction.cs">
+      <Link>CrossCore\Plugins\MvxLoaderPluginBootstrapAction.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Plugins\MvxLoaderPluginManager.cs">
+      <Link>CrossCore\Plugins\MvxLoaderPluginManager.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Plugins\MvxLoaderPluginRegistry.cs">
+      <Link>CrossCore\Plugins\MvxLoaderPluginRegistry.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Plugins\MvxPluginBootstrapAction.cs">
+      <Link>CrossCore\Plugins\MvxPluginBootstrapAction.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\Plugins\MvxPluginManager.cs">
+      <Link>CrossCore\Plugins\MvxPluginManager.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\ReflectionExtensions.cs">
+      <Link>CrossCore\ReflectionExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\UI\IMvxNativeColor.cs">
+      <Link>CrossCore\UI\IMvxNativeColor.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\UI\IMvxNativeVisibility.cs">
+      <Link>CrossCore\UI\IMvxNativeVisibility.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\UI\MvxColor.cs">
+      <Link>CrossCore\UI\MvxColor.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\UI\MvxColors.cs">
+      <Link>CrossCore\UI\MvxColors.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\UI\MvxVisibility.cs">
+      <Link>CrossCore\UI\MvxVisibility.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\WeakSubscription\MvxCanExecuteChangedEventSubscription.cs">
+      <Link>CrossCore\WeakSubscription\MvxCanExecuteChangedEventSubscription.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\WeakSubscription\MvxGeneralEventSubscription.cs">
+      <Link>CrossCore\WeakSubscription\MvxGeneralEventSubscription.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\WeakSubscription\MvxNamedNotifyPropertyChangedEventSubscription.cs">
+      <Link>CrossCore\WeakSubscription\MvxNamedNotifyPropertyChangedEventSubscription.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\WeakSubscription\MvxNotifyCollectionChangedEventSubscription.cs">
+      <Link>CrossCore\WeakSubscription\MvxNotifyCollectionChangedEventSubscription.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\WeakSubscription\MvxNotifyPropertyChangedEventSubscription.cs">
+      <Link>CrossCore\WeakSubscription\MvxNotifyPropertyChangedEventSubscription.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\WeakSubscription\MvxValueEventSubscription.cs">
+      <Link>CrossCore\WeakSubscription\MvxValueEventSubscription.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\WeakSubscription\MvxWeakEventSubscription.cs">
+      <Link>CrossCore\WeakSubscription\MvxWeakEventSubscription.cs</Link>
+    </Compile>
+    <Compile Include="..\CrossCore\Cirrious.CrossCore\WeakSubscription\MvxWeakSubscriptionExtensionMethods.cs">
+      <Link>CrossCore\WeakSubscription\MvxWeakSubscriptionExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Location\Cirrious.MvvmCross.Plugins.Location.Droid\IMvxLocationReceiver.cs">
+      <Link>MvvmCross.Plugins.Location.Dot42\IMvxLocationReceiver.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Location\Cirrious.MvvmCross.Plugins.Location.Droid\MvxAndroidLocationWatcher.cs">
+      <Link>MvvmCross.Plugins.Location.Dot42\MvxAndroidLocationWatcher.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Location\Cirrious.MvvmCross.Plugins.Location.Droid\MvxLocationListener.cs">
+      <Link>MvvmCross.Plugins.Location.Dot42\MvxLocationListener.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Location\Cirrious.MvvmCross.Plugins.Location.Droid\Plugin.cs">
+      <Link>MvvmCross.Plugins.Location.Dot42\Plugin.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Location\Cirrious.MvvmCross.Plugins.Location\IMvxGeoLocationWatcher.cs">
+      <Link>MvvmCross.Plugins.Location\IMvxGeoLocationWatcher.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Location\Cirrious.MvvmCross.Plugins.Location\IMvxLocationWatcher.cs">
+      <Link>MvvmCross.Plugins.Location\IMvxLocationWatcher.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Location\Cirrious.MvvmCross.Plugins.Location\MvxCoordinates.cs">
+      <Link>MvvmCross.Plugins.Location\MvxCoordinates.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Location\Cirrious.MvvmCross.Plugins.Location\MvxGeoLocation.cs">
+      <Link>MvvmCross.Plugins.Location\MvxGeoLocation.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Location\Cirrious.MvvmCross.Plugins.Location\MvxGeolocationOptions.cs">
+      <Link>MvvmCross.Plugins.Location\MvxGeolocationOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Location\Cirrious.MvvmCross.Plugins.Location\MvxGeoLocationWatcher.cs">
+      <Link>MvvmCross.Plugins.Location\MvxGeoLocationWatcher.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Location\Cirrious.MvvmCross.Plugins.Location\MvxLocationAccuracy.cs">
+      <Link>MvvmCross.Plugins.Location\MvxLocationAccuracy.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Location\Cirrious.MvvmCross.Plugins.Location\MvxLocationError.cs">
+      <Link>MvvmCross.Plugins.Location\MvxLocationError.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Location\Cirrious.MvvmCross.Plugins.Location\MvxLocationErrorCode.cs">
+      <Link>MvvmCross.Plugins.Location\MvxLocationErrorCode.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Location\Cirrious.MvvmCross.Plugins.Location\MvxLocationOptions.cs">
+      <Link>MvvmCross.Plugins.Location\MvxLocationOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Location\Cirrious.MvvmCross.Plugins.Location\MvxLocationTrackingMode.cs">
+      <Link>MvvmCross.Plugins.Location\MvxLocationTrackingMode.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Location\Cirrious.MvvmCross.Plugins.Location\MvxLocationWatcher.cs">
+      <Link>MvvmCross.Plugins.Location\MvxLocationWatcher.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Location\Cirrious.MvvmCross.Plugins.Location\PluginLoader.cs">
+      <Link>MvvmCross.Plugins.Location\PluginLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Messenger\Cirrious.MvvmCross.Plugins.Messenger\IMvxMessenger.cs">
+      <Link>MvvmCross.Plugins.Messenger\IMvxMessenger.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Messenger\Cirrious.MvvmCross.Plugins.Messenger\MvxMessage.cs">
+      <Link>MvvmCross.Plugins.Messenger\MvxMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Messenger\Cirrious.MvvmCross.Plugins.Messenger\MvxMessengerHub.cs">
+      <Link>MvvmCross.Plugins.Messenger\MvxMessengerHub.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Messenger\Cirrious.MvvmCross.Plugins.Messenger\MvxReference.cs">
+      <Link>MvvmCross.Plugins.Messenger\MvxReference.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Messenger\Cirrious.MvvmCross.Plugins.Messenger\MvxSubscriberChangeMessage.cs">
+      <Link>MvvmCross.Plugins.Messenger\MvxSubscriberChangeMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Messenger\Cirrious.MvvmCross.Plugins.Messenger\MvxSubscriptionToken.cs">
+      <Link>MvvmCross.Plugins.Messenger\MvxSubscriptionToken.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Messenger\Cirrious.MvvmCross.Plugins.Messenger\PluginLoader.cs">
+      <Link>MvvmCross.Plugins.Messenger\PluginLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Messenger\Cirrious.MvvmCross.Plugins.Messenger\Subscriptions\BaseSubscription.cs">
+      <Link>MvvmCross.Plugins.Messenger\Subscriptions\BaseSubscription.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Messenger\Cirrious.MvvmCross.Plugins.Messenger\Subscriptions\StrongSubscription.cs">
+      <Link>MvvmCross.Plugins.Messenger\Subscriptions\StrongSubscription.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Messenger\Cirrious.MvvmCross.Plugins.Messenger\Subscriptions\TypedSubscription.cs">
+      <Link>MvvmCross.Plugins.Messenger\Subscriptions\TypedSubscription.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Messenger\Cirrious.MvvmCross.Plugins.Messenger\Subscriptions\WeakSubscription.cs">
+      <Link>MvvmCross.Plugins.Messenger\Subscriptions\WeakSubscription.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Messenger\Cirrious.MvvmCross.Plugins.Messenger\ThreadRunners\IMvxActionRunner.cs">
+      <Link>MvvmCross.Plugins.Messenger\ThreadRunners\IMvxActionRunner.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Messenger\Cirrious.MvvmCross.Plugins.Messenger\ThreadRunners\MvxMainThreadActionRunner.cs">
+      <Link>MvvmCross.Plugins.Messenger\ThreadRunners\MvxMainThreadActionRunner.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Messenger\Cirrious.MvvmCross.Plugins.Messenger\ThreadRunners\MvxSimpleActionRunner.cs">
+      <Link>MvvmCross.Plugins.Messenger\ThreadRunners\MvxSimpleActionRunner.cs</Link>
+    </Compile>
+    <Compile Include="..\Plugins\Cirrious\Messenger\Cirrious.MvvmCross.Plugins.Messenger\ThreadRunners\MvxThreadpoolActionRunner.cs">
+      <Link>MvvmCross.Plugins.Messenger\ThreadRunners\MvxThreadpoolActionRunner.cs</Link>
+    </Compile>
+    <Compile Include="MvxBindingContextStackRegistration.cs" />
+    <Compile Include="MvxAndroidBindingResource.cs" />
+    <Compile Include="MvxLockableObjectHelpers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ValuesResource Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\ResourcesToCopy\MvxBindingAttributes.xml">
+      <Link>MvvmCross.Binding.Droid\ResourcesToCopy\MvxBindingAttributes.xml</Link>
+      <SubType>Designer</SubType>
+    </ValuesResource>
+  </ItemGroup>
+  <Import Project="$(Dot42ExtensionsPath)\Dot42.CSharp.targets" />
+  <!--Import Project="..\..\build\Dot42.WithAutoAnno.targets" /-->
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

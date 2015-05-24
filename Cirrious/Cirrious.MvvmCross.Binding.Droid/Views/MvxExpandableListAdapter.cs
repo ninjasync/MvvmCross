@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Specialized;
 using System.Linq;
 using Android.Content;
+#if !DOT42
 using Android.Runtime;
+#endif
 using Android.Views;
 using Android.Widget;
 using Cirrious.CrossCore;
@@ -17,11 +19,12 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
 
         public MvxExpandableListAdapter(Context context)
             : base(context) { }
-
+#if !DOT42
 		protected MvxExpandableListAdapter(IntPtr javaReference, JniHandleOwnership transfer)
 			: base(javaReference, transfer)
 	    {
 	    }
+#endif
 
         private int _groupTemplateId;
 
@@ -90,11 +93,17 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
         {
             return groupPosition;
         }
-
+#if !DOT42
         public Java.Lang.Object GetGroup(int groupPosition)
         {
             return null;
         }
+#else
+        public object GetGroup(int groupPosition)
+        {
+            return null;
+        }
+#endif
 
         // Base implementation returns a long (from BaseExpandableListAdapter.java):
         // bit 0: Whether this ID points to a child (unset) or group (set), so for this method
@@ -145,10 +154,17 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
             return childPosition;
         }
 
+#if !DOT42
         public Java.Lang.Object GetChild(int groupPosition, int childPosition)
         {
             return null;
         }
+#else
+        public object GetChild(int groupPosition, int childPosition)
+        {
+            return null;
+        }
+#endif
 
         public Tuple<int, int> GetPositions(object childItem)
         {

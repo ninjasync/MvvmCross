@@ -7,12 +7,19 @@
 
 using System;
 
+#if DOT42
+using Java.Util.Concurrent.Locks;
+#endif
+
 namespace Cirrious.CrossCore.Core
 {
     public abstract class MvxLockableObject
     {
+#if !DOT42
         private readonly object _lockObject = new object();
-
+#else
+        private readonly ILock _lockObject = new ReentrantLock();
+#endif
         protected void RunSyncWithLock(Action action)
         {
             MvxLockableObjectHelpers.RunSyncWithLock(_lockObject, action);

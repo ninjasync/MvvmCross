@@ -14,6 +14,10 @@ using Cirrious.CrossCore.Exceptions;
 using Cirrious.CrossCore.Platform;
 using Cirrious.MvvmCross.ViewModels;
 
+#if DOT42
+using Dot42;
+#endif
+
 namespace Cirrious.MvvmCross.Platform
 {
     public static class MvxSimplePropertyDictionaryExtensionMethods
@@ -64,7 +68,7 @@ namespace Cirrious.MvvmCross.Platform
 
                 var typedValue = MvxSingletonCache.Instance.Parser.ReadValue(textValue, propertyInfo.PropertyType,
                                                                              propertyInfo.Name);
-                propertyInfo.SetValue(t, typedValue, new object[0]);
+                propertyInfo.SetValue(t, typedValue, null);
             }
 
             return t;
@@ -89,11 +93,12 @@ namespace Cirrious.MvvmCross.Platform
             if (data == null ||
                 !data.TryGetValue(requiredParameter.Name, out parameterValue))
             {
+#if !DOT42
                 if (requiredParameter.IsOptional)
                 {
                     return Type.Missing;
                 }
-
+#endif
                 MvxTrace.Trace(
                     "Missing parameter for call to {0} - missing parameter {1} - asssuming null - this may fail for value types!",
                     debugText,
@@ -106,17 +111,21 @@ namespace Cirrious.MvvmCross.Platform
             return value;
         }
 
-        public static IDictionary<string, string> ToSimplePropertyDictionary(this object input)
+        public static IDictionary<string, string> ToSimplePropertyDictionary([SerializedParameter] this object input)
         {
             if (input == null)
                 return new Dictionary<string, string>();
 
             if (input is IDictionary<string, string>)
                 return (IDictionary<string, string>) input;
+#if !DOT42
+            var type = input.GetType();
+#else
+            var type = input.GetTypeReflectionSafe();
+#endif
 
-            var propertyInfos = from property in input.GetType()
-                                                      .GetProperties(BindingFlags.Instance | BindingFlags.Public |
-                                                                     BindingFlags.FlattenHierarchy)
+            var propertyInfos = from property in type.GetProperties(BindingFlags.Instance | BindingFlags.Public |
+                                                                    BindingFlags.FlattenHierarchy)
                                 where property.CanRead
                                 select new
                                     {
@@ -147,7 +156,7 @@ namespace Cirrious.MvvmCross.Platform
         {
             try
             {
-                var value = propertyInfo.GetValue(input, new object[] {});
+                var value = propertyInfo.GetValue(input, null);
                 if (value == null)
                     return null;
 

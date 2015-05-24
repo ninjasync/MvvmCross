@@ -20,7 +20,11 @@ namespace Cirrious.MvvmCross.Binding.Droid.Target
 
         protected override void SetValueImpl(object target, object value)
         {
+#if !DOT42
             ((View)target).Visibility = value.ConvertToBoolean() ? ViewStates.Gone : ViewStates.Visible;
+#else
+            ((View)target).Visibility = value.ConvertToBoolean() ? View.GONE : View.VISIBLE;
+#endif
         }
     }
 }

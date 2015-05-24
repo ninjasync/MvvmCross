@@ -15,6 +15,10 @@ namespace Cirrious.MvvmCross.Plugins.Location.Droid
         void OnLocationChanged(global::Android.Locations.Location location);
         void OnProviderDisabled(string provider);
         void OnProviderEnabled(string provider);
+#if !DOT42
         void OnStatusChanged(string provider, Availability status, Bundle extras);
+#else
+        void OnStatusChanged(string provider, int status, Bundle extras);
+#endif
     }
 }

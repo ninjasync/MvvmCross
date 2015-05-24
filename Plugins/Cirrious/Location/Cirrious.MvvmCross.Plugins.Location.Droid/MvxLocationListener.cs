@@ -37,12 +37,17 @@ namespace Cirrious.MvvmCross.Plugins.Location.Droid
         {
             _owner.OnProviderEnabled(provider);
         }
-
+#if !DOT42
         public void OnStatusChanged(string provider, Availability status, Bundle extras)
         {
             _owner.OnStatusChanged(provider, status, extras);
         }
-
+#else
+        public void OnStatusChanged(string provider, int status, Bundle extras)
+        {
+            _owner.OnStatusChanged(provider, status, extras);
+        }
+#endif
         #endregion
     }
 }

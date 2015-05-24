@@ -33,23 +33,35 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
         {
         }
 
+#if !DOT42
 		protected MvxTimePicker(IntPtr javaReference, JniHandleOwnership transfer)
 			: base(javaReference, transfer)
 	    {
 	    }
+#endif
 
         public TimeSpan Value
         {
             get
             {
+#if !DOT42
                 int currentHour = CurrentHour.IntValue();
                 int currentMinute = CurrentMinute.IntValue();
+#else
+                int currentHour = CurrentHour.GetValueOrDefault();
+                int currentMinute = CurrentMinute.GetValueOrDefault();
+#endif
                 return new TimeSpan(currentHour, currentMinute, 0);
             }
             set
             {
+#if !DOT42
                 var javaHour = new Java.Lang.Integer(value.Hours);
                 var javaMinutes =new Java.Lang.Integer(value.Minutes);
+#else
+                int? javaHour = value.Hours;
+                int? javaMinutes = value.Minutes;
+#endif
 
                 if (!_initialized)
                 {

@@ -43,8 +43,11 @@ namespace Cirrious.MvvmCross.Droid.Views
                 MvxTrace.Error( "Null Intent seen when creating ViewModel");
                 return null;
             }
-
+#if !DOT42
             if (intent.Action == Intent.ActionMain)
+#else
+            if (intent.Action == Intent.ACTION_MAIN)
+#endif
             {
                 MvxTrace.Trace("Creating ViewModel for ActionMain");
                 return DirectLoad(savedState, viewModelTypeHint);
@@ -140,7 +143,11 @@ namespace Cirrious.MvvmCross.Droid.Views
 
         protected virtual void AdjustIntentForPresentation(Intent intent, MvxViewModelRequest request)
         {
+#if !DOT42
             intent.AddFlags(ActivityFlags.NewTask);
+#else
+            intent.AddFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+#endif
 
 #warning we want to do things here... clear top, remove history item, etc
 //#warning ClearTop is not enough :/ Need to work on an Intent based scheme like http://stackoverflow.com/questions/3007998/on-logout-clear-activity-history-stack-preventing-back-button-from-opening-l

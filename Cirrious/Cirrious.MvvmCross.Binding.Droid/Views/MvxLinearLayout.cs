@@ -39,10 +39,12 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
             this.ChildViewRemoved += OnChildViewRemoved;
         }
 
-		protected MvxLinearLayout(IntPtr javaReference, JniHandleOwnership transfer)
+#if !DOT42
+        protected MvxLinearLayout(IntPtr javaReference, JniHandleOwnership transfer)
 			: base(javaReference, transfer)
 	    {
 	    }
+#endif
 
         public void AdapterOnDataSetChanged(object sender, NotifyCollectionChangedEventArgs eventArgs)
         {

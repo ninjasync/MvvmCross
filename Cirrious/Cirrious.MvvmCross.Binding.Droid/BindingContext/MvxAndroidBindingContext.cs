@@ -74,6 +74,7 @@ namespace Cirrious.MvvmCross.Binding.Droid.BindingContext
             using (new MvxBindingContextStackRegistration<IMvxAndroidBindingContext>(this))
             {
                 var layoutInflator = _layoutInflater.LayoutInflater;
+#if !DOT42
                 using (var clone = layoutInflator.CloneInContext(_droidContext))
                 {
                     if (factory != null)
@@ -88,6 +89,19 @@ namespace Cirrious.MvvmCross.Binding.Droid.BindingContext
                     }
                     return toReturn;
                 }
+#else
+                var clone = layoutInflator.CloneInContext(_droidContext);
+                if (factory != null)
+                {
+                    MvxLayoutInfactorFactory.SetFactory(clone, factory);
+                }
+                var toReturn = clone.Inflate(resourceId, viewGroup, attachToRoot);
+                if (factory != null)
+                {
+                    RegisterBindingsWithClearKey(toReturn, factory.CreatedBindings);
+                }
+                return toReturn;
+#endif
             }
         }
     }

@@ -90,9 +90,14 @@ namespace Cirrious.MvvmCross.Binding.Droid
                                                     typeof(MvxAutoCompleteTextViewSelectedObjectTargetBinding),
                                                     typeof(AutoCompleteTextView),
                                                     "SelectedObject");
+#if !DOT42
             registry.RegisterPropertyInfoBindingFactory(typeof(MvxCompoundButtonCheckedTargetBinding),
                                                     typeof(CompoundButton), "Checked");
-			registry.RegisterPropertyInfoBindingFactory(typeof(MvxSeekBarProgressTargetBinding), typeof(SeekBar),
+#else
+            registry.RegisterPropertyInfoBindingFactory(typeof(MvxCompoundButtonCheckedTargetBinding),
+                                                    typeof(CompoundButton), "IsChecked");
+#endif
+            registry.RegisterPropertyInfoBindingFactory(typeof(MvxSeekBarProgressTargetBinding), typeof(SeekBar),
                                                     "Progress");
             registry.RegisterCustomBindingFactory<View>("Visible",
                                                             view => new MvxViewVisibleBinding(view));
@@ -121,8 +126,10 @@ namespace Cirrious.MvvmCross.Binding.Droid
             registry.RegisterCustomBindingFactory<MvxExpandableListView>("SelectedItem",
                                                                          adapterView =>
                                                                              new MvxExpandableListViewSelectedItemTargetBinding(adapterView));
+#if !DOT42 // TODO: implement RatingBarChange event in Dot42
             registry.RegisterCustomBindingFactory<RatingBar>("Rating",
                                                             ratingBar => new MvxRatingBarRatingTargetBinding(ratingBar));
+#endif
             registry.RegisterCustomBindingFactory<View>("LongClick",
                                                             view =>
                                                             new MvxViewLongClickBinding(view));
@@ -135,8 +142,11 @@ namespace Cirrious.MvvmCross.Binding.Droid
             base.FillDefaultBindingNames(registry);
 
             registry.AddOrOverwrite(typeof(Button), "Click");
+#if !DOT42
             registry.AddOrOverwrite(typeof(CheckBox), "Checked");
-
+#else
+            registry.AddOrOverwrite(typeof(CheckBox), "IsChecked");
+#endif
             registry.AddOrOverwrite(typeof(TextView), "Text");
             registry.AddOrOverwrite(typeof(MvxListView), "ItemsSource");
             registry.AddOrOverwrite(typeof(MvxLinearLayout), "ItemsSource");
@@ -148,7 +158,11 @@ namespace Cirrious.MvvmCross.Binding.Droid
             registry.AddOrOverwrite(typeof(MvxImageView), "ImageUrl");
             registry.AddOrOverwrite(typeof(MvxDatePicker), "Value");
             registry.AddOrOverwrite(typeof(MvxTimePicker), "Value");
+#if !DOT42
             registry.AddOrOverwrite(typeof(CompoundButton), "Checked");
+#else
+            registry.AddOrOverwrite(typeof(CompoundButton), "IsChecked");
+#endif
             registry.AddOrOverwrite(typeof(SeekBar), "Progress");
             registry.AddOrOverwrite(typeof(IMvxImageHelper<Bitmap>), "ImageUrl");
         }

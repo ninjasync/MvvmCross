@@ -72,7 +72,11 @@ namespace Cirrious.MvvmCross.Binding.Droid.Target
 
         private void EditTextOnAfterTextChanged(object sender, AfterTextChangedEventArgs afterTextChangedEventArgs)
         {
+#if !DOT42
             FireValueChanged(TextView.Text);
+#else
+            FireValueChanged(TextView.Text.ToString()); // need to send string insead of ICharSequence
+#endif
         }
 
         protected override void Dispose(bool isDisposing)
@@ -99,7 +103,7 @@ namespace Cirrious.MvvmCross.Binding.Droid.Target
                 var view = TextView;
                 if (view == null)
                     return null;
-                return view.Text;
+                return (string)view.Text; // string conversion required for Dot42
             }
         }
     }

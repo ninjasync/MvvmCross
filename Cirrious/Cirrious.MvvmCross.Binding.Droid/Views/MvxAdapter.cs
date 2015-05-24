@@ -20,7 +20,13 @@ using Cirrious.CrossCore.WeakSubscription;
 using Cirrious.MvvmCross.Binding.Attributes;
 using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 using Cirrious.MvvmCross.Binding.ExtensionMethods;
+
+#if !DOT42
 using Object = Java.Lang.Object;
+#else
+using Object = System.Object;
+#endif
+
 
 namespace Cirrious.MvvmCross.Binding.Droid.Views
 {
@@ -60,14 +66,21 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
                 throw new MvxException(
                     "bindingContext is null during MvxAdapter creation - Adapter's should only be created when a specific binding context has been placed on the stack");
             }
+#if !DOT42
             SimpleViewLayoutId = Resource.Layout.SimpleListItem1;
             SimpleDropDownViewLayoutId = Resource.Layout.SimpleSpinnerDropDownItem;
+#else
+            SimpleViewLayoutId = R.Layout.Simple_list_item_1;
+            SimpleDropDownViewLayoutId = R.Layout.Simple_spinner_dropdown_item;
+#endif
         }
 
+#if !DOT42
 		protected MvxAdapter(IntPtr javaReference, JniHandleOwnership transfer)
 			: base(javaReference, transfer)
 	    {
 	    }
+#endif
 
         protected Context Context
         {

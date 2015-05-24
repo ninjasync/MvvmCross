@@ -13,6 +13,8 @@ namespace Cirrious.MvvmCross.Binding.BindingContext
     public interface IMvxBindingNameRegistry
     {
         void AddOrOverwrite(Type type, string name);
+#if !DOT42
         void AddOrOverwrite<T>(Expression<Func<T, object>> nameExpression);
+#endif
     }
 }

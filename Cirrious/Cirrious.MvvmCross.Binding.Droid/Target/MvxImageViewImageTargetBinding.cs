@@ -42,8 +42,12 @@ namespace Cirrious.MvvmCross.Binding.Droid.Target
 
             var drawableResourceName = GetImageAssetName(stringValue);
             var assetStream = AndroidGlobals.ApplicationContext.Assets.Open(drawableResourceName);
-
+#if !DOT42 
             return assetStream;
+#else  // TODO: make Dot42 either provide an implicit conversion operator, or return the correct 
+       //       stream in the first place.
+            return new JavaInputStreamWrapper(assetStream);
+#endif
         }
 
         private static string GetImageAssetName(string rawImage)

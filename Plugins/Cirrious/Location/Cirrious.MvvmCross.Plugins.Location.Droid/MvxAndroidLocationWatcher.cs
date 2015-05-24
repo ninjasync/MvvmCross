@@ -50,7 +50,11 @@ namespace Cirrious.MvvmCross.Plugins.Location.Droid
             if (_locationManager != null)
                 throw new MvxException("You cannot start the MvxLocation service more than once");
 
+#if !DOT42
             _locationManager = (LocationManager)Context.GetSystemService(Context.LocationService);
+#else
+            _locationManager = (LocationManager)Context.GetSystemService(Context.LOCATION_SERVICE);
+#endif
             if (_locationManager == null)
             {
                 MvxTrace.Warning("Location Service Manager unavailable - returned null");
@@ -59,7 +63,11 @@ namespace Cirrious.MvvmCross.Plugins.Location.Droid
             }
             var criteria = new Criteria()
                 {
+#if !DOT42
                     Accuracy = options.Accuracy == MvxLocationAccuracy.Fine ? Accuracy.Fine : Accuracy.Coarse,
+#else
+                    Accuracy = options.Accuracy == MvxLocationAccuracy.Fine ? Criteria.ACCURACY_FINE : Criteria.ACCURACY_COARSE,
+#endif
                 };
             _bestProvider = _locationManager.GetBestProvider(criteria, true);
             if (_bestProvider == null)
@@ -151,10 +159,12 @@ namespace Cirrious.MvvmCross.Plugins.Location.Droid
             {
                 location = CreateLocation(androidLocation);
             }
+#if !DOT42
             catch (ThreadAbortException)
             {
                 throw;
             }
+#endif
             catch (Exception exception)
             {
                 MvxTrace.Trace("Android: Exception seen in converting location " + exception.ToLongString());
@@ -174,6 +184,7 @@ namespace Cirrious.MvvmCross.Plugins.Location.Droid
             // nothing to do 
         }
 
+#if !DOT42
         public void OnStatusChanged(string provider, Availability status, Bundle extras)
         {
             switch (status)
@@ -188,6 +199,22 @@ namespace Cirrious.MvvmCross.Plugins.Location.Droid
                     throw new ArgumentOutOfRangeException("status");
             }
         }
+#else
+        public void OnStatusChanged(string provider, int status, Bundle extras)
+        {
+            switch (status)
+            {
+                case LocationProvider.AVAILABLE:
+                    break;
+                case LocationProvider.OUT_OF_SERVICE:
+                case LocationProvider.TEMPORARILY_UNAVAILABLE:
+                    SendError(MvxLocationErrorCode.PositionUnavailable);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("status");
+            }
+        }
+#endif
 
         #endregion
     }

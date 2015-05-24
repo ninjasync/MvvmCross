@@ -242,9 +242,11 @@ namespace Cirrious.MvvmCross.Platform
                     {typeof (short), new ShortParser()},
                     {typeof (int), new IntParser()},
                     {typeof (long), new LongParser()},
+#if !DOT42 // java doesn't have unsigned primitives... whew.
                     {typeof (ushort), new UshortParser()},
                     {typeof (uint), new UintParser()},
                     {typeof (ulong), new UlongParser()},
+#endif
                     {typeof (double), new DoubleParser()},
                     {typeof (float), new FloatParser()},
                     {typeof (bool), new BoolParser()},

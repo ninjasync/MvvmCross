@@ -28,10 +28,12 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
             AndroidBindingContext.BindingInflate(templateId, this);
         }
 
+#if !DOT42
 		protected MvxListItemView(IntPtr javaReference, JniHandleOwnership transfer)
 			: base(javaReference, transfer)
 	    {
 	    }
+#endif
 
         public int TemplateId
         {

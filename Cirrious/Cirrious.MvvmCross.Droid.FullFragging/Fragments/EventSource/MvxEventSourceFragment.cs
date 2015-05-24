@@ -16,6 +16,7 @@ namespace Cirrious.MvvmCross.Droid.FullFragging.Fragments.EventSource
     public class MvxEventSourceFragment
         : Fragment
         , IMvxEventSourceFragment
+        , IDisposable
     {
         public event EventHandler<MvxValueEventArgs<Activity>> AttachCalled;
         public event EventHandler<MvxValueEventArgs<Bundle>> CreateWillBeCalled;
@@ -92,7 +93,7 @@ namespace Cirrious.MvvmCross.Droid.FullFragging.Fragments.EventSource
             DetachCalled.Raise(this);
             base.OnDetach();
         }
-
+#if !DOT42
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -101,6 +102,12 @@ namespace Cirrious.MvvmCross.Droid.FullFragging.Fragments.EventSource
             }
             base.Dispose(disposing);
         }
+#else
+        public virtual void Dispose()
+        {
+            DisposeCalled.Raise(this);
+        }
+#endif
 
         public override void OnSaveInstanceState(Bundle outState)
         {

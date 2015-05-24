@@ -196,9 +196,11 @@ namespace Cirrious.CrossCore
             return GetFields(type, BindingFlags.Public | BindingFlags.FlattenHierarchy).FirstOrDefault(p => p.Name == name);
         }
 
+#if !DOT42
         public static Type[] GetGenericArguments(this Type type)
         {
             return type.GenericTypeArguments;
         }
+#endif
     }
 }

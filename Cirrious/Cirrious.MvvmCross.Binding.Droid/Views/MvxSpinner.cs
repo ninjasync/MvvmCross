@@ -24,7 +24,11 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
                 context, attrs,
                 new MvxAdapter(context)
                     {
+#if !DOT42
                         SimpleViewLayoutId = global::Android.Resource.Layout.SimpleDropDownItem1Line
+#else
+                        SimpleViewLayoutId = global::Android.R.Layout.Simple_dropdown_item_1line
+#endif
                     })
         {
         }
@@ -40,10 +44,12 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
             SetupHandleItemSelected();
         }
 
+#if !DOT42
 		protected MvxSpinner(IntPtr javaReference, JniHandleOwnership transfer)
 			: base(javaReference, transfer)
 	    {
 	    }
+#endif
 
         public new IMvxAdapter Adapter
         {

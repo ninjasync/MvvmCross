@@ -86,8 +86,11 @@ namespace Cirrious.MvvmCross.Binding.Droid.Target
             }
             base.Dispose(isDisposing);
         }
-
+#if !DOT42
         private void OnChildClick(object sender, ExpandableListView.ChildClickEventArgs childClickEventArgs)
+#else
+        private void OnChildClick(object sender, ChildClickEventArgs childClickEventArgs)
+#endif
         {
             var listView = this.ListView;
             if (listView == null)

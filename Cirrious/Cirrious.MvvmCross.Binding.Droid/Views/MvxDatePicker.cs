@@ -31,10 +31,12 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
         {
         }
 
+#if !DOT42
 		protected MvxDatePicker(IntPtr javaReference, JniHandleOwnership transfer)
 			: base(javaReference, transfer)
 	    {
 	    }
+#endif
 
         public DateTime Value
         {

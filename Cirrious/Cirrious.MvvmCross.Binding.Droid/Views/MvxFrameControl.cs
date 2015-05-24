@@ -22,6 +22,7 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
     public class MvxFrameControl
         : FrameLayout
           , IMvxBindingContextOwner
+          , IDisposable
     {
         private readonly int _templateId;
         private readonly IMvxAndroidBindingContext _bindingContext;
@@ -52,10 +53,12 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
                 });
         }
 
+#if !DOT42
 	    protected MvxFrameControl(IntPtr javaReference, JniHandleOwnership transfer)
 			: base(javaReference, transfer)
 	    {
 	    }
+#endif
 
         protected IMvxAndroidBindingContext AndroidBindingContext
         {
@@ -71,6 +74,7 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
         private object _cachedDataContext;
         private bool _isAttachedToWindow;
 
+#if !DOT42 
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -81,6 +85,13 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
 
             base.Dispose(disposing);
         }
+#else
+        public void Dispose()
+        {
+            this.ClearAllBindings();
+            _cachedDataContext = null;
+        }
+#endif
 
         protected override void OnAttachedToWindow()
         {

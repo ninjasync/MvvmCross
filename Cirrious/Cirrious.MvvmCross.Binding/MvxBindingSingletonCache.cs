@@ -40,7 +40,9 @@ namespace Cirrious.MvvmCross.Binding
         private IMvxSourceBindingFactory _sourceBindingFactory;
         private IMvxTargetBindingFactory _targetBindingFactory;
         private IMvxLanguageBindingParser _languageParser;
+#if !DOT42
         private IMvxPropertyExpressionParser _propertyExpressionParser;
+#endif
         private IMvxValueConverterLookup _valueConverterLookup;
         private IMvxBindingNameLookup _defaultBindingName;
         private IMvxBinder _binder;
@@ -73,7 +75,7 @@ namespace Cirrious.MvvmCross.Binding
                 return _languageParser;
             }
         }
-
+#if !DOT42
         public IMvxPropertyExpressionParser PropertyExpressionParser
         {
             get
@@ -82,6 +84,7 @@ namespace Cirrious.MvvmCross.Binding
                 return _propertyExpressionParser;
             }
         }
+#endif
 
         public IMvxValueConverterLookup ValueConverterLookup
         {

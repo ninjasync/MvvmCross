@@ -1,3 +1,4 @@
+#if !DOT42
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,3 +18,4 @@ namespace Cirrious.CrossCore
         SetProperty = 8192
     }
 }
+#endif

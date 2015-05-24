@@ -5,6 +5,8 @@
 // 
 // Project Lead - Stuart Lodge, @slodge, me@slodge.com
 
+#if !DOT42
+
 using System;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -77,3 +79,4 @@ namespace Cirrious.CrossCore.Core
         }
     }
 }
+#endif

@@ -21,10 +21,12 @@ namespace Cirrious.MvvmCross.Binding.Droid.Views
         {
         }
 
+#if !DOT42
 		protected MvxAdapterWithChangedEvent(IntPtr javaReference, JniHandleOwnership transfer)
 			: base(javaReference, transfer)
 	    {
 	    }
+#endif
 
         public event EventHandler<NotifyCollectionChangedEventArgs> DataSetChanged;
 

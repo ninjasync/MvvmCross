@@ -16,6 +16,7 @@ namespace Cirrious.MvvmCross.Binding.BindingContext
 {
     public static partial class MvxBindingContextOwnerExtensions
     {
+#if !DOT42
         // note that we don't add more default parameters here
         // - otherwise this overrides the other existing methods
         public static void BindLanguage<TTarget>(this IMvxBindingContextOwner owner
@@ -71,7 +72,7 @@ namespace Cirrious.MvvmCross.Binding.BindingContext
             var sourcePropertyName = parsedSourcePath.Print();
             owner.BindLanguage(target, parsedTargetPathText, sourceKey, sourcePropertyName, fallbackValue, converterName);
         }
-
+#endif
         public static void BindLanguage(this IMvxBindingContextOwner owner
                                         , string targetPropertyName
                                         , string sourceKey

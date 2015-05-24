@@ -51,10 +51,11 @@ namespace Cirrious.MvvmCross.Binding.Droid.Binders
 
         public virtual void BindView(View view, Context context, IAttributeSet attrs)
         {
-            using (
-                var typedArray = context.ObtainStyledAttributes(attrs,
-                                                                MvxAndroidBindingResource.Instance
-                                                                                         .BindingStylableGroupId))
+            var typedArray = context.ObtainStyledAttributes(attrs,
+                                        MvxAndroidBindingResource.Instance.BindingStylableGroupId);
+#if !DOT42
+            using (typedArray)
+#endif
             {
                 int numStyles = typedArray.IndexCount;
                 for (var i = 0; i < numStyles; ++i)

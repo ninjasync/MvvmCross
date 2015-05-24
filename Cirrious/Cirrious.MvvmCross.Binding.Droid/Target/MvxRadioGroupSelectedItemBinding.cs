@@ -68,9 +68,11 @@ namespace Cirrious.MvvmCross.Binding.Droid.Target
 
             bool changed = CheckValueChanged(newValue);
             if (!changed) { return; }
-
+#if !DOT42
             int checkid = Android.Views.View.NoId;
-
+#else
+            int checkid = Android.Views.View.NO_ID;
+#endif
             // find the radio button associated with the new value
             if (newValue != null)
             {
@@ -91,8 +93,11 @@ namespace Cirrious.MvvmCross.Binding.Droid.Target
                     }
                 }
             }
-
+#if !DOT42
             if (checkid == Android.Views.View.NoId)
+#else
+            if (checkid == Android.Views.View.NO_ID)
+#endif
             {
                 radioGroup.ClearCheck();
             }

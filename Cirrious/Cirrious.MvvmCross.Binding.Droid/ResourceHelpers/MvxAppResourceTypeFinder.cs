@@ -17,7 +17,11 @@ namespace Cirrious.MvvmCross.Binding.Droid.ResourceHelpers
         public Type Find()
         {
             var setup = Mvx.Resolve<IMvxAndroidGlobals>();
+#if !DOT42
             var resourceTypeName = setup.ExecutableNamespace + ".Resource";
+#else
+            var resourceTypeName = setup.ExecutableNamespace + ".R";
+#endif
             var resourceType = setup.ExecutableAssembly.GetType(resourceTypeName);
             if (resourceType == null)
                 throw new MvxException("Unable to find resource type - " + resourceTypeName);

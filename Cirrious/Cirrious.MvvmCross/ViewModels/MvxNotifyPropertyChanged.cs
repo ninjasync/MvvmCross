@@ -37,12 +37,13 @@ namespace Cirrious.MvvmCross.ViewModels
                                        : MvxSingletonCache.Instance.Settings.AlwaysRaiseInpcOnUserInterfaceThread;
             ShouldAlwaysRaiseInpcOnUserInterfaceThread(alwaysOnUIThread);
         }
-
+#if !DOT42
         public void RaisePropertyChanged<T>(Expression<Func<T>> property)
         {
             var name = this.GetPropertyNameFromExpression(property);
             RaisePropertyChanged(name);
         }
+#endif
 
         public void RaisePropertyChanged([CallerMemberName] string whichProperty = "")
         {

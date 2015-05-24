@@ -348,8 +348,11 @@ namespace Cirrious.CrossCore.Parse
                 return string.Empty;
             return FullText.Substring(CurrentIndex, safeLength);
         }
-
+#if !DOT42
         protected ValueType ReadNumber()
+#else
+        protected object ReadNumber()
+#endif
         {
             var stringBuilder = new StringBuilder();
 
@@ -386,12 +389,20 @@ namespace Cirrious.CrossCore.Parse
             return NumberFromText(numberText, decimalPeriodSeen);
         }
 
+#if !DOT42
         protected ValueType NumberFromText(string numberText)
+#else
+        protected object NumberFromText(string numberText)
+#endif
         {
             return NumberFromText(numberText, numberText.Contains("."));
         }
 
+#if !DOT42
         protected ValueType NumberFromText(string numberText, bool decimalPeriodSeen)
+#else
+        protected object NumberFromText(string numberText, bool decimalPeriodSeen)
+#endif
         {
             if (decimalPeriodSeen)
             {

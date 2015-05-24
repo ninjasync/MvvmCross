@@ -16,7 +16,9 @@ namespace Cirrious.MvvmCross.ViewModels
         // this ShouldAlwaysRaiseInpcOnUserInterfaceThread is not a Property so as to avoid Inpc pollution
         bool ShouldAlwaysRaiseInpcOnUserInterfaceThread();
         void ShouldAlwaysRaiseInpcOnUserInterfaceThread(bool value);
+#if !DOT42
         void RaisePropertyChanged<T>(Expression<Func<T>> property);
+#endif
         void RaisePropertyChanged(string whichProperty);
         void RaisePropertyChanged(PropertyChangedEventArgs changedArgs);
     }

@@ -28,12 +28,13 @@ namespace Cirrious.MvvmCross.Binding.BindingContext
             BindingDescription.TargetName = targetPropertyName;
             return this;
         }
-
+#if !DOT42
         public MvxFluentBindingDescription<TTarget, TSource> For(Expression<Func<TTarget, object>> targetPropertyPath)
         {
             var targetPropertyName = TargetPropertyName(targetPropertyPath);
             return For(targetPropertyName);
         }
+#endif
 
         public MvxFluentBindingDescription<TTarget, TSource> TwoWay()
         {
@@ -66,13 +67,14 @@ namespace Cirrious.MvvmCross.Binding.BindingContext
             SetFreeTextPropertyPath(sourcePropertyPath);
             return this;
         }
-
+#if !DOT42
         public MvxFluentBindingDescription<TTarget, TSource> To(Expression<Func<TSource, object>> sourceProperty)
         {
             var sourcePropertyPath = SourcePropertyPath(sourceProperty);
             SetKnownTextPropertyPath(sourcePropertyPath);
             return this;
         }
+#endif
 
         public MvxFluentBindingDescription<TTarget, TSource> CommandParameter(object parameter)
         {
@@ -169,12 +171,13 @@ namespace Cirrious.MvvmCross.Binding.BindingContext
             BindingDescription.TargetName = targetPropertyName;
             return this;
         }
-
+#if !DOT42
         public MvxFluentBindingDescription<TTarget> For(Expression<Func<TTarget, object>> targetPropertyPath)
         {
             var targetPropertyName = TargetPropertyName(targetPropertyPath);
             return For(targetPropertyName);
         }
+#endif
 
         public MvxFluentBindingDescription<TTarget> TwoWay()
         {
@@ -207,13 +210,14 @@ namespace Cirrious.MvvmCross.Binding.BindingContext
             SetFreeTextPropertyPath(sourcePropertyPath);
             return this;
         }
-
+#if !DOT42
         public MvxFluentBindingDescription<TTarget> To<TSource>(Expression<Func<TSource, object>> sourceProperty)
         {
             var sourcePropertyPath = SourcePropertyPath(sourceProperty);
             SetKnownTextPropertyPath(sourcePropertyPath);
             return this;
         }
+#endif
 
         public MvxFluentBindingDescription<TTarget> CommandParameter(object parameter)
         {

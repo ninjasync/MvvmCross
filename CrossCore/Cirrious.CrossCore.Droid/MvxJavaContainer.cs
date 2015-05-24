@@ -5,7 +5,11 @@
 // 
 // Project Lead - Stuart Lodge, @slodge, me@slodge.com
 
+#if DOT42
+using System;
+#else
 using Java.Lang;
+#endif
 
 namespace Cirrious.CrossCore.Droid
 {
