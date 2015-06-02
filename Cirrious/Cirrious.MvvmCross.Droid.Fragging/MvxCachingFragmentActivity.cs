@@ -19,6 +19,10 @@ using Cirrious.MvvmCross.Droid.Views;
 using Cirrious.MvvmCross.ViewModels;
 using Cirrious.MvvmCross.Views;
 
+#if DOT42
+using Dot42;
+#endif
+
 namespace Cirrious.MvvmCross.Droid.Fragging
 {
     public class MvxCachingFragmentActivity
@@ -118,7 +122,11 @@ namespace Cirrious.MvvmCross.Droid.Fragging
         {
             // See if Fragments were just sleeping, and repopulate the _lookup
             // with references to them.
+#if !DOT42
             foreach (var fragment in SupportFragmentManager.Fragments)
+#else
+            foreach (var fragment in SupportFragmentManager.Fragments.AsEnumerable())
+#endif
             {
                 var fragmentType = fragment.GetType();
                 var lookup = _lookup.Where(x => x.Value.FragmentType == fragmentType);

@@ -80,20 +80,34 @@ namespace Cirrious.MvvmCross.Droid.Fragging
             base.StartActivityForResult(intent, requestCode);
         }
 
+#if !DOT42
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             ActivityResultCalled.Raise(this, new MvxActivityResultParameters(requestCode, resultCode, data));
             base.OnActivityResult(requestCode, resultCode, data);
         }
 
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing)
-			{
-				DisposeCalled.Raise(this);
-			}
-			base.Dispose(disposing);
-		}
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                DisposeCalled.Raise(this);
+            }
+            base.Dispose(disposing);
+        }
+#else
+        protected override void OnActivityResult(int requestCode, int resultCode, Intent data)
+        {
+            ActivityResultCalled.Raise(this, new MvxActivityResultParameters(requestCode, resultCode, data));
+            base.OnActivityResult(requestCode, resultCode, data);
+        }
+
+        public virtual void Dispose()
+        {
+            DisposeCalled.Raise(this);
+        }
+#endif
+
 
         public event EventHandler DisposeCalled;
         public event EventHandler<MvxValueEventArgs<Bundle>> CreateWillBeCalled;

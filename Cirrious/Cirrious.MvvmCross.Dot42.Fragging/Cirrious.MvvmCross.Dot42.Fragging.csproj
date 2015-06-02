@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3AECAAB7-F3AD-4BFF-B825-098F5CC32923}</ProjectGuid>
+    <ProjectTypeGuids>{337B7DB7-2D1E-448D-BEBF-17E887A46E37};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cirrious.MvvmCross.Dot42.Fragging</RootNamespace>
+    <AssemblyName>MvvmCross.Dot42.Fragging</AssemblyName>
+    <TargetFrameworkIdentifier>Android</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.1</TargetFrameworkVersion>
+    <AndroidVersion>$(TargetFrameworkVersion)</AndroidVersion>
+    <SupportedCultures>
+    </SupportedCultures>
+    <ApkOutputs>false</ApkOutputs>
+    <GenerateAndroidManifest>false</GenerateAndroidManifest>
+    <ApkFilename>.apk</ApkFilename>
+    <PackageName>
+    </PackageName>
+    <Dot42ExtensionsPath Condition=" '$(Dot42ExtensionsPath)' == '' ">$(Registry:HKEY_CURRENT_USER\SOFTWARE\dot42\Android@ExtensionsPath)</Dot42ExtensionsPath>
+    <Dot42ExtensionsPath Condition=" '$(Dot42ExtensionsPath)' == '' ">$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\dot42\Android@ExtensionsPath)</Dot42ExtensionsPath>
+    <ApkCertificatePath>
+    </ApkCertificatePath>
+    <ApkCertificateThumbprint>
+    </ApkCertificateThumbprint>
+    <TargetSdkAndroidVersion />
+    <GenerateWcfProxy>false</GenerateWcfProxy>
+    <GenerateSetNextInstructionCode>false</GenerateSetNextInstructionCode>
+    <EnableCompilerCache>false</EnableCompilerCache>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\Mvx\Dot42\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;DOT42</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\Mvx\Dot42\</OutputPath>
+    <DefineConstants>TRACE;DOT42</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dot42" />
+    <Reference Include="dot42.AndroidSupportLibrary" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\Fragments\EventSource\IMvxEventSourceFragment.cs">
+      <Link>Fragments\EventSource\IMvxEventSourceFragment.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\Fragments\EventSource\MvxBaseFragmentAdapter.cs">
+      <Link>Fragments\EventSource\MvxBaseFragmentAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\Fragments\EventSource\MvxEventSourceDialogFragment.cs">
+      <Link>Fragments\EventSource\MvxEventSourceDialogFragment.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\Fragments\EventSource\MvxEventSourceFragment.cs">
+      <Link>Fragments\EventSource\MvxEventSourceFragment.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\Fragments\EventSource\MvxEventSourceListFragment.cs">
+      <Link>Fragments\EventSource\MvxEventSourceListFragment.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\Fragments\IMvxFragmentView.cs">
+      <Link>Fragments\IMvxFragmentView.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\Fragments\MvxBindingFragmentAdapter.cs">
+      <Link>Fragments\MvxBindingFragmentAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\Fragments\MvxDialogFragment.cs">
+      <Link>Fragments\MvxDialogFragment.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\Fragments\MvxFragment.cs">
+      <Link>Fragments\MvxFragment.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\Fragments\MvxFragmentExtensions.cs">
+      <Link>Fragments\MvxFragmentExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\Fragments\MvxListFragment.cs">
+      <Link>Fragments\MvxListFragment.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\Fragments\MvxSimpleLayoutInflater.cs">
+      <Link>Fragments\MvxSimpleLayoutInflater.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\MvxCachingFragmentActivity.cs">
+      <Link>MvxCachingFragmentActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\MvxCreateViewParameters.cs">
+      <Link>MvxCreateViewParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\MvxEventSourceFragmentActivity.cs">
+      <Link>MvxEventSourceFragmentActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\MvxFragmentActivity.cs">
+      <Link>MvxFragmentActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\MvxFragmentViewExtensionMethods.cs">
+      <Link>MvxFragmentViewExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\MvxOwnedViewModelFragmentAttribute.cs">
+      <Link>MvxOwnedViewModelFragmentAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\MvxOwnedViewModelFragmentAttributeExtensionMethods.cs">
+      <Link>MvxOwnedViewModelFragmentAttributeExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\MvxTabsFragmentActivity.cs">
+      <Link>MvxTabsFragmentActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\Presenter\IMvxFragmentHost.cs">
+      <Link>Presenter\IMvxFragmentHost.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\Presenter\IMvxFragmentsPresenter.cs">
+      <Link>Presenter\IMvxFragmentsPresenter.cs</Link>
+    </Compile>
+    <Compile Include="..\Cirrious.MvvmCross.Droid.Fragging\Presenter\MvxFragmentsPresenter.cs">
+      <Link>Presenter\MvxFragmentsPresenter.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dot42\MvvmCross.Dot42.csproj">
+      <Project>{9693e85e-16a9-4750-9414-c84bdd5febdd}</Project>
+      <Name>MvvmCross.Dot42</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(Dot42ExtensionsPath)\Dot42.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

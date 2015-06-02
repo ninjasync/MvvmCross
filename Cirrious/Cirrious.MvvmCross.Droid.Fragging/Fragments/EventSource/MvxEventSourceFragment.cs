@@ -95,6 +95,7 @@ namespace Cirrious.MvvmCross.Droid.Fragging.Fragments.EventSource
             base.OnDetach();
         }
 
+#if !DOT42
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -103,6 +104,13 @@ namespace Cirrious.MvvmCross.Droid.Fragging.Fragments.EventSource
             }
             base.Dispose(disposing);
         }
+#else
+        public virtual void Dispose()
+        {
+            DisposeCalled.Raise(this);
+        }
+#endif
+
 
         public override void OnSaveInstanceState(Bundle outState)
         {

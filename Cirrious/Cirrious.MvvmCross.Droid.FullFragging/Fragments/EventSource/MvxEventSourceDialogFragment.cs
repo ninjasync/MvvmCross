@@ -93,6 +93,7 @@ namespace Cirrious.MvvmCross.Droid.FullFragging.Fragments.EventSource
             DetachCalled.Raise(this);
             base.OnDetach();
         }
+
 #if !DOT42
         protected override void Dispose(bool disposing)
         {
