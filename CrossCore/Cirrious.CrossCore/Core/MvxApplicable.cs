@@ -9,9 +9,11 @@ using System;
 
 namespace Cirrious.CrossCore.Core
 {
+#if !DOT42 // Java does not support SuppressFinalize, hence the warning mechanism will not work in Dot42
     public abstract class MvxApplicable
         : IMvxApplicable
     {
+
         private bool _finalizerSuppressed;
         
         ~MvxApplicable()
@@ -33,4 +35,17 @@ namespace Cirrious.CrossCore.Core
             SuppressFinalizer();
         }
     }
+#else // Dot42
+    public abstract class MvxApplicable
+            : IMvxApplicable
+    {
+        public virtual void Apply()
+        {
+        }
+
+        protected void SuppressFinalizer()
+        {
+        }
+    }
+#endif
 }
