@@ -153,6 +153,9 @@
     <Compile Include="..\Cirrious\Cirrious.MvvmCross.Binding.Droid\Target\MvxExpandableListViewSelectedItemTargetBinding.cs">
       <Link>MvvmCross.Binding.Droid\Target\MvxExpandableListViewSelectedItemTargetBinding.cs</Link>
     </Compile>
+    <None Include="..\CrossCore\Cirrious.CrossCore\Parse\Delimiters.cs">
+      <Link>CrossCore\Parse\Delimiters.cs</Link>
+    </None>
     <Compile Include="..\Plugins\Cirrious\MethodBinding\Cirrious.MvvmCross.Plugins.MethodBinding\MvxMethodSourceBinding.cs">
       <Link>MvvmCross.Plugins.MethodBinding\MvxMethodSourceBinding.cs</Link>
     </Compile>
@@ -174,6 +177,7 @@
     <Compile Include="..\Plugins\Cirrious\Visibility\Cirrious.MvvmCross.Plugins.Visibility\PluginLoader.cs">
       <Link>MvvmCross.Plugins.Visibility\PluginLoader.cs</Link>
     </Compile>
+    <Compile Include="Delimiters.cs" />
     <Compile Include="MvxNamedInstanceRegistryFiller.cs" />
     <Compile Include="MvvmCross.Plugins.Visibility.Dot42\MvxDot42Visibility.cs" />
     <Compile Include="MvvmCross.Plugins.Visibility.Dot42\Plugin.cs" />

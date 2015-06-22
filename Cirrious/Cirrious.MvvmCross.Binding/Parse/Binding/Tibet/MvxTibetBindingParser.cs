@@ -8,6 +8,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Cirrious.CrossCore.Exceptions;
+using Cirrious.CrossCore.Parse;
 using Cirrious.MvvmCross.Binding.Parse.Binding.Swiss;
 
 namespace Cirrious.MvvmCross.Binding.Parse.Binding.Tibet
@@ -17,14 +18,13 @@ namespace Cirrious.MvvmCross.Binding.Parse.Binding.Tibet
     {
         public static readonly object LiteralNull = new object();
 
-        private List<char> _terminatingCharacters;
- 
-        protected override IEnumerable<char> TerminatingCharacters()
+        private Delimiters _terminatingCharacters;
+
+        protected override Delimiters TerminatingCharacters()
         {
             if (_terminatingCharacters == null)
             {
-                _terminatingCharacters =
-                    base.TerminatingCharacters().Union(OperatorCharacters()).ToList();
+                _terminatingCharacters = base.TerminatingCharacters().Union(OperatorCharacters());
             }
 
             return _terminatingCharacters;

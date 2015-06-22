@@ -78,7 +78,7 @@ namespace Cirrious.CrossCore.Test
                 SkipWhitespaceAndCharacters(toSkip);
             }
 
-            public void CallSkipWhitespaceAndCharacters(IEnumerable<char> toSkip)
+            public void CallSkipWhitespaceAndCharacters(Delimiters toSkip)
             {
                 SkipWhitespaceAndCharacters(toSkip);
             }

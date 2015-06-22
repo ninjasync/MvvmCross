@@ -5,26 +5,29 @@
 // 
 // Project Lead - Stuart Lodge, @slodge, me@slodge.com
 
-using System.Collections.Generic;
-using System.Linq;
 using Cirrious.CrossCore.Exceptions;
+using Cirrious.CrossCore.Parse;
 
 namespace Cirrious.MvvmCross.Binding.Parse.Binding.Swiss
 {
     public class MvxSwissBindingParser
         : MvxBindingParser
     {
-        protected virtual IEnumerable<char> TerminatingCharacters()
+        private Delimiters _terminatingCharacters;
+        protected virtual Delimiters TerminatingCharacters()
         {
-            return new[] {'=', ',', ';', '(', ')'};
+            return _terminatingCharacters ?? 
+                  (_terminatingCharacters = new Delimiters('=', ',', ';', '(', ')'));
         }
+
+        private static readonly Delimiters DescriptionTermination = new Delimiters(',', ';'); 
 
         protected virtual void ParseNextBindingDescriptionOptionInto(MvxSerializableBindingDescription description)
         {
             if (IsComplete)
                 return;
 
-            var block = ReadTextUntilNonQuotedOccurrenceOfAnyOf(TerminatingCharacters().ToArray());
+            var block = ReadTextUntilNonQuotedOccurrenceOfAnyOf(TerminatingCharacters());
             block = block.Trim();
             if (string.IsNullOrEmpty(block))
             {
@@ -37,7 +40,7 @@ namespace Cirrious.MvvmCross.Binding.Parse.Binding.Swiss
                 case "Path":
                     ParseEquals(block);
                     ThrowExceptionIfPathAlreadyDefined(description);
-                    description.Path = ReadTextUntilNonQuotedOccurrenceOfAnyOf(',', ';');
+                    description.Path = ReadTextUntilNonQuotedOccurrenceOfAnyOf(DescriptionTermination);
                     break;
                 case "Converter":
                     ParseEquals(block);

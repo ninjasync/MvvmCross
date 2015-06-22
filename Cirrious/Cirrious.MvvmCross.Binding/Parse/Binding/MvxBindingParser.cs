@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using Cirrious.CrossCore.Exceptions;
 using Cirrious.CrossCore.Parse;
@@ -96,9 +95,8 @@ namespace Cirrious.MvvmCross.Binding.Parse.Binding
             return (MvxBindingMode) ReadEnumerationValue(typeof (MvxBindingMode));
         }
 
-        protected string ReadTextUntilNonQuotedOccurrenceOfAnyOf(params char[] terminationCharacters)
+        protected string ReadTextUntilNonQuotedOccurrenceOfAnyOf(Delimiters terminationCharacters)
         {
-            var terminationLookup = terminationCharacters.ToDictionary(c => c, c => true);
             SkipWhitespace();
             var toReturn = new StringBuilder();
 
@@ -114,7 +112,7 @@ namespace Cirrious.MvvmCross.Binding.Parse.Binding
                     continue;
                 }
 
-                if (terminationLookup.ContainsKey(currentChar))
+                if (terminationCharacters.Contains(currentChar))
                 {
                     break;
                 }

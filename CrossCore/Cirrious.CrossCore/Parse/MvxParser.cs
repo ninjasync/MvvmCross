@@ -193,10 +193,10 @@ namespace Cirrious.CrossCore.Parse
 
         protected void SkipWhitespaceAndCharacters(params char[] toSkip)
         {
-            SkipWhitespaceAndCharacters((IEnumerable<char>) toSkip);
+            SkipWhitespaceAndCharacters(new Delimiters(toSkip));
         }
 
-        protected void SkipWhitespaceAndCharacters(IEnumerable<char> toSkip)
+        protected void SkipWhitespaceAndCharacters(Delimiters toSkip)
         {
             while (!IsComplete
                    && IsWhiteSpaceOrCharacter(CurrentChar, toSkip))
@@ -228,7 +228,7 @@ namespace Cirrious.CrossCore.Parse
             return char.IsWhiteSpace(charToTest) || toSkip.ContainsKey(charToTest);
         }
 
-        private static bool IsWhiteSpaceOrCharacter(char charToTest, IEnumerable<char> toSkip)
+        private static bool IsWhiteSpaceOrCharacter(char charToTest, Delimiters toSkip)
         {
             return char.IsWhiteSpace(charToTest) || toSkip.Contains(charToTest);
         }

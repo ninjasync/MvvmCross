@@ -6,6 +6,7 @@
 // Project Lead - Stuart Lodge, @slodge, me@slodge.com
 
 using Cirrious.CrossCore.Exceptions;
+using Cirrious.CrossCore.Parse;
 
 namespace Cirrious.MvvmCross.Binding.Parse.Binding.Lang
 {
@@ -19,6 +20,9 @@ namespace Cirrious.MvvmCross.Binding.Parse.Binding.Lang
 
         public string DefaultTextSourceName { get; set; }
 
+        private static readonly Delimiters BlockTerminiation      = new Delimiters('=', ',', ';');
+        private static readonly Delimiters SourceNameTerminiation = new Delimiters(',', ';');
+
         public MvxLanguageBindingParser()
         {
             DefaultConverterName = "Language";
@@ -31,7 +35,7 @@ namespace Cirrious.MvvmCross.Binding.Parse.Binding.Lang
             if (IsComplete)
                 return;
 
-            var block = ReadTextUntilNonQuotedOccurrenceOfAnyOf('=', ',', ';');
+            var block = ReadTextUntilNonQuotedOccurrenceOfAnyOf(BlockTerminiation);
             block = block.Trim();
             if (string.IsNullOrEmpty(block))
             {
@@ -42,7 +46,7 @@ namespace Cirrious.MvvmCross.Binding.Parse.Binding.Lang
             {
                 case "Source":
                     ParseEquals(block);
-                    var sourceName = ReadTextUntilNonQuotedOccurrenceOfAnyOf(',', ';');
+                    var sourceName = ReadTextUntilNonQuotedOccurrenceOfAnyOf(SourceNameTerminiation);
                     description.Path = sourceName;
                     break;
                 case "Converter":
