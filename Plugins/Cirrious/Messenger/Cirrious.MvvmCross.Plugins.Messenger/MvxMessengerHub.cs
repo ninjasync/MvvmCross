@@ -248,7 +248,7 @@ namespace Cirrious.MvvmCross.Plugins.Messenger
 
             if (!allSucceeded)
             {
-                MvxTrace.Trace("One or more listeners failed - purge scheduled");
+                MvxTrace.Trace("One or more listeners failed for message type {0} - purge scheduled", messageType.Name);
                 SchedulePurge(messageType);
             }
         }
