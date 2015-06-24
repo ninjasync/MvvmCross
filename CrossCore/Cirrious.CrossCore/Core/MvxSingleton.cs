@@ -99,7 +99,7 @@ namespace Cirrious.CrossCore.Core
         {
             get
             {
-                return _instances.Get(typeof(TInterface)) as TInterface;
+                return (TInterface)_instances.Get(typeof(TInterface));
             }       
             
             private set
